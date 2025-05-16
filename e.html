@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar Scroll Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .top-bar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
+      padding: 10px 5%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .main-navbar {
+      position: fixed;
+      top: 40px;
+      width: 100%;
+      background: transparent;
+      color: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      z-index: 999;
+      border-bottom: 1px solid transparent;
+    }
+
+    .main-navbar .logo-text,
+    .main-navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .main-navbar.scrolled {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      color: black;
+    }
+
+    .main-navbar.scrolled .logo-text,
+    .main-navbar.scrolled a {
+      color: black !important;
+    }
+
+    .hero {
+      height: 120vh;
+      background: linear-gradient(#0c0c2e, #1c1c2e);
+      color: white;
+      padding: 150px 5%;
+    }
+
+    .content {
+      height: 1500px;
+      background: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    Top Utility Bar
+  </div>
+
+  <div class="main-navbar">
+    <div class="logo-text">KINGTECH INC</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <h1>Scroll Down to See Navbar Effect</h1>
+  </div>
+
+  <div class="content">
+    <p>More content...</p>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.main-navbar');
+      const topbar = document.querySelector('.top-bar');
+      if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+        topbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+        topbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
