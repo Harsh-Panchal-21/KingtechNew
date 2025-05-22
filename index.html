@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>King Tech Inc</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -23,68 +24,71 @@
     <style>
 
  
-html, body {
+body {
       margin: 0;
-      padding: 0;
-      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
     }
  
- 
+
     .main-navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      border-bottom: 1px solid #ddd;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      color: black;       
-      padding: 30px 5%;
-      display: flex;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-      z-index: 999;
-      border-bottom: 1px solid transparent;
-    }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  color: white;
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  z-index: 999;
+  border-bottom: 1px solid transparent;
+}
 
-    .main-navbar .logo-text,
-    .main-navbar a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
-    }
+.main-navbar .logo-text,
+.main-navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
 
-    .main-navbar.scrolled {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      color: black;
-    }
+/* Hover in transparent navbar */
+.main-navbar a:hover {
+  color: #ff4d4d; /* Soft red highlight on hover */
+}
 
-    .main-navbar.scrolled .logo-text,
-    .main-navbar.scrolled a {
-      color: black !important;
-    }
+/* Scrolled state */
+.main-navbar.scrolled {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  color: black;
+}
+
+.main-navbar.scrolled .logo-text,
+.main-navbar.scrolled a {
+  color: black !important;
+}
+
+/* Hover in scrolled navbar */
+.main-navbar.scrolled a:hover {
+  color: #e60000 !important; /* Darker red hover when scrolled */
+}
 
     /* HERO SECTION */
     .hero {
-  height: 90vh; /* Full viewport height */
-  width: 100%;   /* Full width */
-  background-size: cover;           /* Ensures full coverage */
-  background-position: center;      /* Keeps subject centered */
-  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;          /* Align content to the left */
-  padding: 0 10%;
+  padding: 0 5%;
   position: relative;
-  color: rgb(19, 41, 168);
   text-shadow: 0 1px 2px rgba(0,0,0,0.7);
-  transition: background-image 1s ease-in-out;
-  background-color: rgb(15, 15, 53); /* Better match */
-
- }
+  background-size: cover;
+  background-position: center;
+}
 
     .hero h1 {
       font-size: 3rem;
@@ -116,54 +120,112 @@ html, body {
       margin-left: 15px;
     }
 
-    .blue-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(19, 41, 168, 0.4); /* Blue color with transparency */
-    backdrop-filter: blur(6px); /* Blur effect */
-    z-index: 1;
-  }
+ 
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(8px); }
     }
 
-    /* TAB SELECTOR */
-    .tab-bar {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      padding: 1rem 0;
-      background: rgba(0, 0, 0, 0.3);
-      font-size: 0.9rem;
-      backdrop-filter: blur(4px);
-      margin-left: -99px;;
+/* TAB SELECTOR */
+.tab-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 10;
+}
 
-    }
+.tab-bar div {
+  position: relative;
+  color: #ddd;
+  cursor: pointer;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
 
-    .tab-bar div {
-      color: #ccc;
-      cursor: pointer;
-      position: relative;
-    }
+.tab-bar div:hover {
+  color: white;
+}
 
-    .tab-bar .active {
-      color: white;
-      font-weight: bold;
-    }
+.tab-bar .active {
+  color: #fff;
+  font-weight: 600;
+}
 
-    .tab-bar .active::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: red;
-    }
-      
+.tab-bar .active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background-color: red;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+    
+    
+    .service_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            height: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+            .service_card i {
+                color: #007bff;
+                margin-bottom: 15px;
+            }
+
+            .service_card h4 {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                min-height: 60px; /* Ensures titles have the same height */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .service_card p {
+                font-size: 16px;
+                margin-bottom: 20px;
+                min-height: 80px; /* Ensures descriptions have the same height */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .service_card:hover {
+                transform: translateY(-5px);
+            }
+
+        .services_section .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .services_section .col-md-4 {
+            display: flex;
+            margin-bottom: 30px;
+        }
         #portfolio {
             background-color: #000;
             color: #fff;
@@ -214,42 +276,97 @@ html, body {
                 transform: translateX(calc(-200px * 8));
             }
         }
-   
-        contact-info {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-        margin-top: 10px;
-    }
+  
 
-    .header-section {
-        padding: 20px;
-        margin: 20px 10px;
-    }
+        .contact-section {
+            background: url('images/contact.jpg') no-repeat center center / cover;
+            padding: 60px 20px;
+            position: relative;
+        }
 
-    .text-4xl {
-        font-size: 1.8rem;
-    }
+            .contact-section::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                 backdrop-filter: brightness(100%) blur(0px);
+                z-index: 1;
+            }
 
-    .text-lg {
-        font-size: 1rem;
-    }
+        .contact-container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            z-index: 2;
+        }
 
-    .form-container {
-        padding: 20px;
-        margin: 20px 10px;
-    }
+        .contact-info, .contact-form {
+            flex: 1;
+            padding: 30px;
+            min-width: 300px;
+        }
 
-    .form-container .grid {
-        grid-template-columns: 1fr !important;
-    }
+            .contact-info h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                color:white
+            }
 
-    .tab-button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-     
-    .anniversary-seal {
+        .info-box {
+            margin-bottom: 30px;
+        }
+
+            .info-box i {
+                color: #fbc02d;
+                margin-right: 10px;
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 12px 15px;
+                border: none;
+                border-bottom: 2px solid #fff;
+                background: transparent;
+                color: white;
+                font-size: 16px;
+            }
+
+                .form-group input::placeholder,
+                .form-group textarea::placeholder {
+                    color: white;
+                }
+
+        .btn-submit {
+            background: #fbc02d;
+            color: #000;
+            border: none;
+            padding: 12px 40px;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+         }
+
+            .btn-submit:hover {
+                background: #ffca28;
+            }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        .anniversary-seal {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -262,102 +379,60 @@ html, body {
   width: 100%;
   height: auto;
 }
-
     </style>
 </head>
 
-<body  > 
-
-<!-- Main Navigation Bar -->
-<header class="main-navbar fixed top-0 left-0 w-full z-50 bg-white/40 backdrop-blur-md shadow-md py-4 px-6 flex items-center justify-between">
-    <!-- Logo -->
-    <div class="flex items-center gap-3 text-xl font-bold text-gray-900">
-      <img src="images/kingtech.png" alt="King Tech Logo" class="h-10 w-auto">
-     </div>
-  
-    <!-- Nav Links -->
-    <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-700">
-      <a href="#" class="text-indigo-600 font-bold">Home</a>
-      <a href="about.html" class="hover:text-indigo-600">About</a>
-      <a href="#services" class="hover:text-indigo-600">Services</a>
-      <a href="#portfolio" class="hover:text-indigo-600">Portfolio</a>
-      <a href="#faq" class="hover:text-indigo-600">FAQ</a>
-      <a href="contact.html" class="hover:text-indigo-600">Contact</a>
-    </nav>
-  
-    <!-- Search Box -->
-    <div class="hidden md:flex items-center gap-3 text-gray-700 relative">
-      <input
-        type="text"
-        id="searchBox"
-        placeholder="Write and press Enter to search..."
-        class="w-64 p-2 rounded-md border border-gray-300 shadow bg-white/80 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-      >
-    </div>
-  </header>
-  
-
-  
-<br> <br> 
-<br> <br>  
+<body>
  
-  <!-- Hero Section -->
- <!-- HERO SECTION -->
-<!-- HERO SECTION -->
-<section class="hero" id="hero">
-    <div class="relative w-full h-screen overflow-hidden">
   
-      <!-- Rotating Image -->
-      <img id="heroImage" src="images/modernss.png"
-           class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ease-in-out"
-           alt="Hero Background" />
-  
-      <!-- Blue Blur Overlay -->
-      <div class="absolute inset-0 bg-blue-1700/30 backdrop-blur-sm z-10"></div>
-  
-      <!-- Overlay Content -->
-      <div class="relative z-20 flex flex-col justify-center items-start h-full px-10 text-white">
-        <h1 class="text-4xl font-bold mb-4 drop-shadow-lg">Welcome to King Technology Inc</h1>
-        <p class="text-lg mb-6 drop-shadow-md">Your Trusted Partner for Innovative IT Solutions</p>
- 
+    <div class="main-navbar">  
+        <img src="images/kingtech.png" alt="King Tech Logo" class="h-10 w-auto">
+
+        <nav class="nav-center">
+            <a href="#" class="text-indigo-600 font-bold">Home</a>
+            <a href="about.html" class="hover:text-indigo-600">About</a>
+            <a href="#services" class="hover:text-indigo-600">Services</a>
+            <a href="#portfolio" class="hover:text-indigo-600">Portfolio</a>
+            <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+            <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+        </nav>
+        <div class="nav-right">
+        
+        </div>
       </div>
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <h1>WELCOME TO KING TECHNOLOGY INC</h1>
+    <p><br>Your Trusted Partner for Innovative IT Solutions</p>
   
-      <!-- Bottom Service Tabs -->
-      <div class="absolute bottom-0 left-0 w-full flex justify-center items-center gap-4 py-3 bg-black/50 text-white text-sm z-20">
+    <!-- Bottom Tabs -->
+    <div class="tab-bar">
         <div>Custom Software</div>
         <div>Web Development</div>
         <div>Network Support</div>
         <div>Cloud Solutions</div>
         <div>Mobile Apps</div>
         <div>Cybersecurity</div>
-      </div>
     </div>
   </section>
+   
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const backgrounds = [
+        'images/cloud.png',
+        'images/slide.png',
+        'images/robert.png',
+        'images/mm.png'
+      ];
   
-  
-  <!-- IMAGE SLIDER SCRIPT -->
-  <script>
-    const images = [
-       'images/robert.png',
-      'images/slide.png',
-      'images/cloud.png'
-    ];
-  
-    let current = 0;
-    const heroImage = document.getElementById('heroImage');
-  
-    function updateImage() {
-      heroImage.style.opacity = 0;
-      setTimeout(() => {
-        heroImage.src = images[current];
-        heroImage.style.opacity = 1;
-        current = (current + 1) % images.length;
-      }, 300); // match fade transition
-    }
-  
-    setInterval(updateImage, 5000); // 5 seconds per slide
+      const heroSection = document.getElementById('hero');
+      const randomImage = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+      heroSection.style.backgroundImage = `url('${randomImage}')`;
+    });
   </script>
   
+
   
 <!-- IT Culture and Values Section -->
 <section id="it-values" class="py-24 text-white bg-gradient-to-r from-[#1a2980] to-[#26d0ce]">
