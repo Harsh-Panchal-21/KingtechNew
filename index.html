@@ -42,7 +42,7 @@ body {
   transition: all 0.3s ease;
   z-index: 999;
   border-bottom: 1px solid transparent;
-}
+ }
 
 .main-navbar .logo-text,
 .main-navbar a {
@@ -83,11 +83,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5%;
-  position: relative;
+   position: relative;
   text-shadow: 0 1px 2px rgba(0,0,0,0.7);
-  background-size: cover;
-  background-position: center;
+   background-size:100%;          /* Show full image */
+  background-repeat: no-repeat;      /* Prevent image repetition */
+  background-position: center center;/* Center the image */
+  background-color: #000; 
+           
 }
 
     .hero h1 {
@@ -120,6 +122,16 @@ body {
       margin-left: 15px;
     }
 
+    .hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0));
+  z-index: 1;
+}
+
  
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
@@ -132,45 +144,44 @@ body {
   bottom: 0;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
   padding: 1rem 0;
   background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
-  font-size: 1rem;
-  font-family: 'Segoe UI', sans-serif;
+   font-size: 1rem;
   z-index: 10;
+  text-align: center;
 }
 
-.tab-bar div {
-  position: relative;
+.tab-bar div a {
   color: #ddd;
-  cursor: pointer;
-  padding-bottom: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 3px;
   transition: color 0.3s ease;
 }
 
-.tab-bar div:hover {
+.tab-bar div a:hover {
   color: white;
 }
 
-.tab-bar .active {
+.tab-bar .active a {
   color: #fff;
   font-weight: 600;
 }
 
-.tab-bar .active::after {
+.tab-bar .active a::after {
   content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  margin: 0 auto;
   width: 60%;
   height: 2px;
   background-color: red;
   border-radius: 10px;
-  transition: width 0.3s ease;
+  margin-top: 4px;
 }
+
 
     
     
@@ -378,7 +389,8 @@ body {
 .anniversary-seal img {
   width: 100%;
   height: auto;
-}
+ }
+
     </style>
 </head>
 
@@ -392,8 +404,7 @@ body {
             <a href="#" class="text-indigo-600 font-bold">Home</a>
             <a href="about.html" class="hover:text-indigo-600">About</a>
             <a href="#services" class="hover:text-indigo-600">Services</a>
-            <a href="#portfolio" class="hover:text-indigo-600">Portfolio</a>
-            <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+             <a href="#faq" class="hover:text-indigo-600">FAQ</a>
             <a href="contact.html" class="hover:text-indigo-600">Contact</a>
         </nav>
         <div class="nav-right">
@@ -402,18 +413,19 @@ body {
       </div>
 
 <!-- Hero Section -->
-<section class="hero" id="hero">
-    <h1>WELCOME TO KING TECHNOLOGY INC</h1>
-    <p><br>Your Trusted Partner for Innovative IT Solutions</p>
+<!-- Hero Section -->
+<section class="hero text-center" id="hero">
+    <h1 style="font-size: 4rem;">WELCOME TO KING TECHNOLOGY INC</h1>
+    <p style="font-size: 1.5rem; margin-top: 1rem;">Your Trusted Partner for Innovative IT Solutions</p>
   
     <!-- Bottom Tabs -->
-    <div class="tab-bar">
-        <div>Custom Software</div>
-        <div>Web Development</div>
-        <div>Network Support</div>
-        <div>Cloud Solutions</div>
-        <div>Mobile Apps</div>
-        <div>Cybersecurity</div>
+    <div class="tab-bar justify-center">
+      <div><a href="custom-software.html">Custom Software</a></div>
+      <div><a href="web-development.html">Web Development</a></div>
+      <div><a href="network-support.html">Network Support</a></div>
+      <div><a href="cloud-solutions.html">Cloud Solutions</a></div>
+      <div><a href="mobile-apps.html">Mobile Apps</a></div>
+      <div><a href="cybersecurity.html">Cybersecurity</a></div>
     </div>
   </section>
    
@@ -421,9 +433,11 @@ body {
     document.addEventListener("DOMContentLoaded", function () {
       const backgrounds = [
         'images/cloud.png',
-        'images/slide.png',
-        'images/robert.png',
-        'images/mm.png'
+         'images/ol.png',
+         'images/oh.png',
+         'images/oh4.png',
+           'images/oh5.png',
+           'images/oh6.png'
       ];
   
       const heroSection = document.getElementById('hero');
@@ -653,7 +667,7 @@ body {
 </section>
 
 <div class="anniversary-seal">
-    <img src="images/35th-anniversary.png" alt="35 Years Anniversary" />
+    <img src="images/356.png" alt="35 Years Anniversary" />
   </div>
   
   <!--
