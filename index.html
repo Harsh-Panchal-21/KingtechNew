@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King Tech Inc</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+  /* Menu */
+  .main-navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      text-align: center;
+
+    }
+    .main-navbar .logo {
+      height: 40px;
+    }
+    .main-navbar .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .main-navbar .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1f2937;
+      transition: color 0.3s ease;
+      text-align: center;
+    }
+    .main-navbar .nav-links a:hover {
+      color: #2563eb;
+    }
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      color: #1f2937;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      width: 100%;
+      color: white;
+      padding: 0 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero img.bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-top: 1rem;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .tabs a {
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .tabs a:hover {
+      color: #facc15;
+    }
+
+    @media (max-width: 768px) {
+      .main-navbar .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero {
+        min-height: 50vh;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+      /* Portfolio */
+
+    #portfolio {
+            background-color: #000;
+            color: #fff;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .slider {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .slide-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            width: calc(250px * 16);
+        }
+
+        .partner-logo {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            flex: 0 0 200px;
+        }
+
+            .partner-logo img {
+                max-height: 70px;
+                max-width: 100%;
+            }
+
+            .partner-logo:hover {
+                transform: translateY(-5px);
+            }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-200px * 8));
+            }
+        }
+
+      /* Anniversary Seal */
+
+        .anniversary-seal {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: auto;
+  z-index: 9999;
+  opacity: 0.9;
+}
+.anniversary-seal img {
+  width: 100%;
+  height: auto;
+ }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  
+
+  <header class="main-navbar fixed top-0 left-0 w-full z-50 bg-white shadow-md py-4 px-6 flex items-center justify-between">
+    <div class="flex items-center gap-3 text-xl font-bold text-gray-900">
+    <img src="images/kingtech.png" alt="King Tech Logo" class="h-10 w-auto">
+     </div>
+    <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-700">
+        <a href="old.html" class="hover:text-indigo-600">Home</a>
+        <a href="old.html#it-values" class="hover:text-indigo-600">About</a>
+        <a href="old.html#services" class="hover:text-indigo-600">Services</a>
+        <a href="old.html#portfolio" class="hover:text-indigo-600">Portfolio</a>
+        <a href="old.html#faq" class="hover:text-indigo-600">FAQ</a>
+      <a href="contact.html" class="hover:text-indigo-600">Contact Us</a>
+    </nav>
+    <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+       
+   
+          
+     </div>
+    <div class="flex items-center gap-3 text-gray-700 relative">
+       
+     
+      </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <img id="heroBg" class="bg-img" src="" alt="Background Image">
+    <h1>Welcome to King Technology Inc</h1>
+    <p>Your Trusted Partner for Innovative IT Solutions</p>
+    <div class="tabs">
+      <a href="#custom-software">Custom Software</a>
+      <a href="#web-development">Web Development</a>
+      <a href="#network-support">Network Support</a>
+      <a href="#cloud-solutions">Cloud Solutions</a>
+      <a href="#mobile-apps">Mobile Apps</a>
+      <a href="#cybersecurity">Cybersecurity</a>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    const backgrounds = [
+      'images/cloud.png',
+      'images/ol.png',
+      'images/oh.png',
+      'images/oh4.png',
+      'images/oh5.png',
+      'images/oh6.png'
+    ];
+    const heroBg = document.getElementById('heroBg');
+    const random = Math.floor(Math.random() * backgrounds.length);
+    heroBg.src = backgrounds[random];
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+
+    window.addEventListener('scroll', function () {
+      const nav = document.querySelector('.main-navbar');
+      nav.classList.toggle('shadow-md', window.scrollY > 10);
+    });
+  </script>
+
+
+  
+<!-- IT Culture and Values Section -->
+<section id="it-values" class="py-24 text-white bg-gradient-to-r from-[#1a2980] to-[#26d0ce]">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold mb-4 text-black">🌐 Our IT Culture & Core Values</h2>
+      <p class="text-lg mb-12 text-white/90">We don’t just deliver technology—we deliver trust, reliability, and vision.</p>
+  
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="bg-white/90 text-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
+          <div class="text-4xl text-indigo-600 mb-4">
+            <i class="fas fa-users"></i>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Client-Centric Approach</h4>
+          <p class="text-sm">We listen, understand, and deliver tailored solutions that align with our clients’ goals.</p>
+        </div>
+  
+        <div class="bg-white/90 text-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
+          <div class="text-4xl text-indigo-600 mb-4">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Continuous Innovation</h4>
+          <p class="text-sm">We embrace new technologies and ideas to help our clients stay ahead in their industries.</p>
+        </div>
+  
+        <div class="bg-white/90 text-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
+          <div class="text-4xl text-indigo-600 mb-4">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h4 class="text-xl font-semibold mb-2">Integrity & Trust</h4>
+          <p class="text-sm">We build long-term relationships through transparency, honesty, and professionalism.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <style>
+         
+    section#services {
+      padding: 100px 0;
+    }
+
+    h3 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      padding: 0 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+
+    .cta-btn {
+      padding: 10px 24px;
+      border: 2px solid #0ea5e9;
+      border-radius: 999px;
+      color: #0f172a;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta-btn:hover {
+      background: #0ea5e9;
+      color: #ffffff;
+    }
+  </style>
+
+<!-- Services Section -->
+<section id="explore" class="py-24 bg-gradient-to-b from-white to-indigo-50 text-gray-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold mb-4 text-black">🚀 Explore Everything We Offer</h2>
+        <p class="text-lg text-gray-600">From software to security, we build solutions for businesses of all sizes.</p>
+      </div>
+  
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-black-600 mb-2">🌐 Web & App Development</h3>
+          <p class="text-sm text-gray-700">Custom websites, eCommerce platforms, and mobile apps that scale with you.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">🔧 Full-Service IT Support</h3>
+          <p class="text-sm text-gray-700">Ongoing maintenance, tech troubleshooting, and remote assistance for businesses.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">📞 Cloud Phone Systems</h3>
+          <p class="text-sm text-gray-700">VoIP-based systems with advanced call routing, voicemail-to-email, and CRM integration.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">📸 Security Camera Systems</h3>
+          <p class="text-sm text-gray-700">Smart surveillance solutions with remote monitoring and cloud storage integration.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">🧠 AI & Machine Learning</h3>
+          <p class="text-sm text-gray-700">Intelligent automation, analytics, and pattern detection for smarter decisions.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xlh3 c shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">📊 Data Analytics & Reporting</h3>
+          <p class="text-sm text-gray-700">Turn your data into clear dashboards and actionable business insights.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">🛒 E-Commerce Solutions</h3>
+          <p class="text-sm text-gray-700">Online store design, inventory management, secure checkout, and payment gateways.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">🧰 Custom Software Development</h3>
+          <p class="text-sm text-gray-700">Tailor-made software tools built to meet your workflow and business goals.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">🔐 Cybersecurity Services</h3>
+          <p class="text-sm text-gray-700">Firewalls, malware protection, and compliance consulting for digital protection.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">📥 Email Marketing & Automation</h3>
+          <p class="text-sm text-gray-700">Campaign design, segmentation, and performance tracking made simple.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">📣 Social Media Marketing</h3>
+          <p class="text-sm text-gray-700">Engage your audience with content strategy, scheduling, and ad management.</p>
+        </div>
+  
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="text-xl font-bold text-black-600 mb-2">🏨 Property Management Systems</h3>
+          <p class="text-sm text-gray-700">Manage bookings, payments, rooms, and customer check-ins all in one place.</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+<!--Preferred Partners Section with Carousel-->
+<section id="portfolio" class="py-24 bg-gradient-to-r from-blue-50 to-white text-center"
+>
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="text-4xl font-extrabold mb-4 text-black">SERVICE PREFERRED PARTNERS</h2>
+            <div class="mx-auto" style="width: 100px; border-bottom: 4px solid #080808; margin-top: 10px;"></div>
+        </div>
+
+        <div class="slider">
+            <div class="slide-track">
+                <!--Logos repeated twice for infinite scroll-->
+                <div class="partner-logo"><img src="images/dell.png" alt="Dell"></div>
+                <div class="partner-logo"><img src="images/microsoft.png" alt="Microsoft"></div>
+                <div class="partner-logo"><img src="images/duoLogo.png" alt="Intel"></div>
+                <div class="partner-logo"><img src="images/Ubiquiti.png" alt="Office"></div>
+                <div class="partner-logo"><img src="images/logo.png" alt="Logo"></div>
+                <div class="partner-logo"><img src="images/webrootlogo.png" alt="Webroot"></div>
+                <div class="partner-logo"><img src="images/fortinet-logo.png" alt="Fortinet"></div>
+                <div class="partner-logo"><img src="images/Cisco-logo.png" alt="Dell"></div>
+                <div class="partner-logo"><img src="images/HP.png" alt="Fortinet"></div>
+
+                <div class="partner-logo"><img src="images/dell.png" alt="Dell"></div>
+                <div class="partner-logo"><img src="images/microsoft.png" alt="Microsoft"></div>
+                <div class="partner-logo"><img src="images/duoLogo.png" alt="Intel"></div>
+                <div class="partner-logo"><img src="images/Ubiquiti.png" alt="Office"></div>
+                <div class="partner-logo"><img src="images/logo.png" alt="Logo"></div>
+                <div class="partner-logo"><img src="images/webrootlogo.png" alt="Webroot"></div>
+                <div class="partner-logo"><img src="images/fortinet-logo.png" alt="Fortinet"></div>
+                <div class="partner-logo"><img src="images/Cisco-logo.png" alt="Dell"></div>
+                <div class="partner-logo"><img src="images/HP.png" alt="Fortinet"></div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="anniversary-seal">
+    <img src="images/356.png" alt="35 Years Anniversary" />
+  </div>
+   
+ 
+  <section id="technologies" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold mb-4 text-black">🧠 Technologies We Use</h2>
+      <p class="text-gray-600 mb-12 text-lg">
+        We use modern frameworks, languages, and tools to deliver robust, scalable, and secure solutions.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center text-gray-800 text-sm font-semibold">
+        <div>HTML5</div>
+        <div>CSS3</div>
+        <div>JavaScript</div>
+        <div>React</div>
+        <div>Node.js</div>
+        <div>SQL Server</div>
+        <div>MongoDB</div>
+        <div>Python</div>
+        <div>Tailwind CSS</div>
+        <div>Bootstrap</div>
+        <div>GitHub</div>
+        <div>AWS</div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+    <!-- Why Choose Us Section -->
+<section id="why-us" class="py-24 bg-gradient-to-r from-blue-50 to-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-extrabold mb-4 text-black">💼 Why Choose King Tech Inc?</h2>
+      <p class="text-lg text-gray-600 mb-12">We blend innovation with reliability to deliver top-tier IT solutions tailored to your business.</p>
+  
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+        
+        <!-- Card 1 -->
+        <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
+          <div class="text-3xl text-indigo-600 mb-4">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">Future-Ready Solutions</h4>
+          <p class="text-gray-600">We build scalable, innovative systems that evolve with your business.</p>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
+          <div class="text-3xl text-green-600 mb-4">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">Exceptional Support</h4>
+          <p class="text-gray-600">Our friendly support team is always here to help — fast response guaranteed.</p>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
+          <div class="text-3xl text-yellow-500 mb-4">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">Security & Trust</h4>
+          <p class="text-gray-600">We prioritize security and transparency in every project we deliver.</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+<section id="faq" class="py-24 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-4xl font-extrabold mb-4 text-black text-center">❓ Frequently Asked Questions</h2>
+  
+      <div class="space-y-6">
+        <!-- FAQ Item 1 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <button class="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none flex justify-between items-center faq-toggle">
+            How long does a typical project take?
+            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="mt-4 text-gray-600 faq-answer hidden">
+            Most small to mid-size projects take between 2 to 6 weeks depending on the complexity, timeline, and requirements.
+          </div>
+        </div>
+  
+        <!-- FAQ Item 2 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <button class="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none flex justify-between items-center faq-toggle">
+            Do you offer support after the project is completed?
+            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="mt-4 text-gray-600 faq-answer hidden">
+            Absolutely. We provide ongoing maintenance and support packages based on your needs — from bug fixes to performance improvements.
+          </div>
+        </div>
+  
+        <!-- FAQ Item 3 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <button class="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none flex justify-between items-center faq-toggle">
+            Can you work with my existing systems or software?
+            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="mt-4 text-gray-600 faq-answer hidden">
+            Yes! We specialize in system integrations and can work with your existing infrastructure or legacy tools.
+          </div>
+        </div>
+  
+        <!-- FAQ Item 4 -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <button class="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none flex justify-between items-center faq-toggle">
+            How do I get a quote?
+            <i class="fas fa-chevron-down transition-transform duration-300"></i>
+          </button>
+          <div class="mt-4 text-gray-600 faq-answer hidden">
+            Simply fill out the project inquiry form above or contact us directly via email or phone. We'll get back to you with an estimate within 24–48 hours.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = !answer.classList.contains('hidden');
+  
+        // Close all other FAQs
+        document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.add('hidden'));
+        document.querySelectorAll('.faq-toggle i').forEach(ic => ic.classList.remove('rotate-180'));
+  
+        // Toggle this one
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  </script>
+   <!-- Contact CTA Banner -->
+<section  id="contact"  class="py-24 bg-gradient-to-r from-blue-50 to-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold mb-4">📞 Ready to Get Started?</h2>
+      <p class="text-lg mb-8">Let’s talk about how King Tech Inc can help take your business to the next level.</p>
+      <a href="contact.html" class="inline-block bg-white text-indigo-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition">
+        Contact Us Today
+      </a>
+    </div>
+  </section>
+    
+      
+ 
+   
+     
+  <footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-black py-16">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <!-- About Section -->
+      <div>
+        <a href="old.html" class="inline-block bg-white p-2  ">
+          <img src="images/kingtech.png" alt="King Tech Inc Logo" class="h-12 object-contain">
+        </a>
+        <h5 class="mt-6 text-lg font-bold text-black">About King Tech Inc</h5>
+        <p class="text-sm text-black leading-relaxed mt-2">
+          King Technology Inc. provides comprehensive IT consulting services to public and private sector clients. Locally owned and operated, proudly serving Central Illinois’ technology needs for over 30 years.
+        </p>
+        <div class="flex space-x-4 mt-4">
+          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+  
+      <!-- Quick Links Section -->
+      <div>
+        <h5 class="text-lg font-bold text-black mb-4">Quick Links</h5>
+        <ul class="space-y-2 text-sm">
+          <li><a href="old.html" class="text-black hover:underline">Home</a></li>
+          <li><a href="#it-values" class="text-black hover:underline">About Us</a></li>
+          <li><a href="#services" class="text-black hover:underline">Services</a></li>
+          <li><a href="#portfolio" class="text-black hover:underline">Portfolio</a></li>
+          <li><a href="#contact" class="text-black hover:underline">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact Info Section -->
+      <div>
+        <h5 class="text-lg font-bold text-black mb-4">Contact Us</h5>
+        <ul class="space-y-3 text-sm">
+          <li class="text-black"><i class="fas fa-map-marker-alt mr-2"></i> 3 N Old State Capitol Plaza, Springfield, IL 62701</li>
+          <li class="text-black"><i class="fas fa-phone mr-2"></i> +1 217-522-6700</li>
+          <li class="text-black"><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@kingtech.net" class="text-black hover:underline">info@kingtech.net</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 text-center text-sm text-black border-t border-black/10 pt-6">
+      &copy; 2025 King Technology Inc. All rights reserved.
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
