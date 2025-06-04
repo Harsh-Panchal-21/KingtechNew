@@ -24,35 +24,27 @@
     
     }
     .main-navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      border-bottom: 1px solid #ddd;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      color: black;       
-      padding: 30px 5%;
-      display: flex;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-      z-index: 999;
-      border-bottom: 1px solid transparent;
-    }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  color: white;
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
 
-    .main-navbar .logo-text,
-    .main-navbar a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 0 10px;
-    }
-
-    .main-navbar.scrolled {
-      background: white;
-      border-bottom: 1px solid #ddd;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      color: black;
-    }
+.main-navbar .logo-text,
+.main-navbar a {
+  color: black;
+  margin: 0 10px;
+  font-size: 1.125rem; /* 18px */
+  text-decoration: none;
+  font-weight: bold;
+}
+ 
 
     .main-navbar.scrolled .logo-text,
     .main-navbar.scrolled a {
@@ -187,7 +179,7 @@
       <a href="index.html#services" class="hover:text-indigo-600">Services</a>
       <a href="index.html#portfolio" class="hover:text-indigo-600">Portfolio</a>
       <a href="index.html#faq" class="hover:text-indigo-600">FAQ</a>
-      <a href="#" class="text-indigo-600 font-bold">Contact</a>
+      <a href="contact.html" class="text-indigo-600 font-bold">Contact</a>
     </nav>
   </header>
   <script>
