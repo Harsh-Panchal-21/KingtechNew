@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Security Camera Systems | KingTech Inc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to right, #f1f5f9, #ffffff);
+      color: #1f2937;
+    }
+    .main-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  color: white;
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.main-navbar .logo-text,
+.main-navbar a {
+  color: black;
+  margin: 0 10px;
+  font-size: 1.125rem; /* 18px */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+    .main-navbar.scrolled {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      color: black;
+    }
+
+    .main-navbar.scrolled .logo-text,
+    .main-navbar.scrolled a {
+      color: black !important;
+    }
+
+  
+    .service-detail {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      padding: 60px 40px;
+      margin-top: 60px;
+    }
+    .service-detail h2 {
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+    .service-detail .lead {
+      font-size: 1.15rem;
+      color: #4b5563;
+    }
+    .service-detail ul li {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #1e3a8a, #3b82f6);
+      border: none;
+      font-weight: 500;
+      padding: 10px 24px;
+      border-radius: 8px;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(to right, #1e40af, #2563eb);
+    }
+  
+  </style>
+</head>
+<body>
+
+<header class="main-navbar fixed top-0 left-0 w-full z-50 bg-white shadow-md py-4 px-6 flex items-center justify-between relative">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 text-xl font-bold text-gray-900">
+          <img src="images/kingtech.png" alt="King Tech Logo" class="h-10 w-auto">
+        </div>
+      
+        <!-- Mobile Hamburger Icon -->
+        <div class="md:hidden ml-auto block">
+          <button id="menu-toggle" class="text-2xl text-gray-900 focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      
+        <!-- Nav Links -->
+        <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row gap-6 text-sm font-semibold text-gray-700 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent p-4 md:p-0 shadow md:shadow-none z-50">
+          <a href="index.html" class="hover:text-indigo-600">Home</a>
+          <a href="about.html" class="hover:text-indigo-600">About</a>
+          <a href="index.html#services" class="hover:text-indigo-600">Services</a>
+          <a href="index.html#portfolio" class="hover:text-indigo-600">Portfolio</a>
+          <a href="index.html#faq" class="hover:text-indigo-600">FAQ</a>
+          <a href="#" class="text-indigo-600 font-bold">Contact</a>
+        </nav>
+      </header>
+      <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const icon = menuToggle.querySelector('i');
+      
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+        });
+      
+        // Optional: Close menu on link click
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+              mobileMenu.classList.add('hidden');
+              icon.classList.add('fa-bars');
+              icon.classList.remove('fa-times');
+            }
+          });
+        });
+      </script>
+
+      <br> <br>        <br> <br> 
+<div class="container">
+  <section class="service-detail">
+    <div class="text-center mb-5">
+      <h2>📸 Security Camera Systems</h2>
+      <p class="lead">Smart surveillance for homes and businesses with live monitoring and cloud access.</p>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4">
+        <img src="https://www.nordencommunication.com/public/uploads/media/best-security-camera-systems60631995c7962.jpg" alt="Security Camera Systems" class="img-fluid rounded shadow-sm" />
+      </div>
+      <div class="col-md-6">
+        <h4 class="mb-3 text-primary">What We Offer:</h4>
+        <ul>
+          <li>Indoor & outdoor IP surveillance cameras</li>
+          <li>Cloud storage and local DVR/NVR systems</li>
+          <li>Mobile remote monitoring & smart alerts</li>
+          <li>Integration with alarms and access control</li>
+        </ul>
+        <p class="mt-3">
+          KingTech Inc. provides end-to-end security camera systems tailored to your property. We install and configure advanced surveillance setups with HD clarity, motion detection, and real-time streaming — giving you control and visibility wherever you are.
+        </p>
+        <p>
+          Protect your business, assets, or home with scalable video solutions designed to deter threats and keep your environment secure 24/7.
+        </p>
+        <a href="index.html#contact" class="btn btn-primary mt-4">Get a Quote</a>
+      </div>
+    </div>
+
+    <div class="mt-5 p-4 bg-light rounded shadow-sm">
+      <h5 class="mb-3">Why KingTech for Surveillance?</h5>
+      <ul>
+        <li><strong>Crystal-Clear Quality:</strong> Up to 4K resolution with night vision.</li>
+        <li><strong>Access Anytime:</strong> View live feeds and recordings on your phone or PC.</li>
+        <li><strong>Smart Alerts:</strong> Real-time motion detection and AI analytics.</li>
+        <li><strong>Expert Setup:</strong> Professional installation, support, and maintenance.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<footer class="footer_section mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <a href="index.html" class="bg-white px-3 py-1 rounded shadow d-inline-block">
+          <img src="images/kingtech.png" alt="King Tech Inc Logo" style="height: 50px;" />
+        </a>
+        <h5 class="mt-4">About King Tech Inc</h5>
+        <p style="font-size: 15px;">King Technology Inc. provides comprehensive IT consulting services to public and private sector clients. Locally owned and operated, we’ve proudly served central Illinois for over 30 years.</p>
+        <ul class="social_links list-inline mt-3">
+          <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f text-white"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fab fa-twitter text-white"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in text-white"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fab fa-instagram text-white"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5>Contact Us</h5>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-map-marker-alt mr-2"></i> 3 N Old State Capitol Plaza, Springfield, IL</li>
+          <li><i class="fas fa-phone mr-2"></i> +1 217-522-6700</li>
+          <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@kingtech.net">info@kingtech.net</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025 King Technology Inc. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
