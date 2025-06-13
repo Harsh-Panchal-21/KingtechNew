@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>King Tech Digital Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #e5ecf4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #fff;
+      width: 370px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    }
+
+    .top-section {
+      background: linear-gradient(to right, #0073e6, #00b894);
+      padding: 30px 20px 10px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      max-width: 190px;
+      margin: 10px auto;
+      display: block;
+    }
+
+    .role {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin: 15px 0;
+    }
+
+    .socials a {
+      color: white;
+      font-size: 18px;
+      transition: 0.2s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #e0e0e0;
+    }
+
+    .quick-actions {
+      display: flex;
+      justify-content: space-around;
+      background: #f9f9f9;
+      padding: 14px 8px;
+      border-top: 1px solid #ddd;
+    }
+
+    .quick-actions div {
+      text-align: center;
+      font-size: 13px;
+      color: #333;
+    }
+
+    .quick-actions i {
+      display: block;
+      font-size: 18px;
+      color: #0073e6;
+      margin-bottom: 4px;
+    }
+
+    .details {
+      padding: 20px;
+    }
+
+    .details h4 {
+      color: #0073e6;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .details p {
+      margin: 0 0 12px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .details i {
+      color: #00b894;
+      margin-right: 8px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      padding: 10px 0;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="top-section">
+    <img src="https://cdn-icons-png.flaticon.com/512/8608/8608769.png" alt="Profile" class="profile-pic" />
+    <img src="images/KingTechLogo no tag.png" alt="King Tech Logo" class="logo"/>
+    <div class="role">Innovative IT Solutions & Development</div>
+    
+    <div class="socials">
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <div class="quick-actions">
+    <div><i class="fas fa-phone"></i>Call</div>
+    <div><i class="fab fa-whatsapp"></i>Chat</div>
+    <div><i class="fas fa-globe"></i>Website</div>
+    <div><i class="fas fa-map-marker-alt"></i>Location</div>
+  </div>
+
+  <div class="details">
+    <h4><i class="fas fa-building"></i> Company</h4>
+    <p>King Tech Inc</p>
+
+    <h4><i class="fas fa-cogs"></i> Services</h4>
+    <p>IT & Network Support, Web & App Development, Cloud Phone Systems, Cybersecurity, Security Cameras, Software</p>
+
+    <h4><i class="fas fa-map-marker-alt"></i> Address</h4>
+    <p>Springfield, IL, USA</p>
+
+    <h4><i class="fas fa-envelope"></i> Email</h4>
+    <p>info@kingtech.net</p>
+
+    <h4><i class="fas fa-globe"></i> Website</h4>
+    <p><a href="https://kingtech.net" target="_blank" style="color:#0073e6;text-decoration:none;">https://kingtech.net</a></p>
+  </div>
+
+  <div class="footer">
+    © 2025 King Tech Inc.
+  </div>
+</div>
+
+</body>
+</html>

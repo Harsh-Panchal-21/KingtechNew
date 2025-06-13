@@ -30,7 +30,7 @@
   /* Menu */
   
   .main-navbar {
-  background-color: #c59e76 !important; /* Based on uploaded image */
+  background-color: white !important; /* Based on uploaded image */
   padding: 30px 5%;
   display: flex;
   justify-content: space-between;
@@ -40,16 +40,18 @@
 }
 
 .main-navbar a {
-  color: #4B5563; /* Gray-600 */
+  color: #c59e76; /* Beige */
   margin: 0 10px;
   font-size: 1.125rem;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .main-navbar a:hover {
-  color: white;
+  color: #000; /* Change on hover to black for contrast */
 }
+
 
 
 
@@ -241,36 +243,37 @@
 <body>
   <!-- Navbar -->
    
-
-  <header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-[#c59e76] shadow-md">
+ 
+  <header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
     <!-- Left Logo -->
     <div class="flex items-center gap-3">
-      <img src="images/GetAttachmentThumbnail.png" alt="King Tech Logo" class="h-10 w-auto">
+      <img src="images/black and greay.png" alt="King Tech Logo" class="h-10 w-auto">
     </div>
   
     <!-- Center Nav Links -->
-    <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-600 justify-center flex-grow text-center">
-      <a href="index.html" class="hover:text-white">Home</a>
-      <a href="about.html" class="hover:text-white">About</a>
-      <a href="index.html#services" class="hover:text-white">Services</a>
-      <a href="index.html#portfolio" class="hover:text-white">Portfolio</a>
-      <a href="index.html#faq" class="hover:text-white">FAQ</a>
-      <a href="contact.html" class="text-white font-bold">Contact</a>
+    <nav class="hidden md:flex gap-6 text-sm font-semibold text-[#c59e76] justify-center flex-grow text-center">
+      <a href="index.html" class="hover:text-black">Home</a>
+      <a href="about.html" class="hover:text-black">About</a>
+      <a href="index.html#services" class="hover:text-black">Services</a>
+      <a href="index.html#portfolio" class="hover:text-black">Portfolio</a>
+      <a href="index.html#faq" class="hover:text-black">FAQ</a>
+      <a href="contact.html" class="font-bold hover:text-black">Contact</a>
     </nav>
   
- <!-- Right Anniversary Logo -->
-<div class="flex items-center gap-3">
-  <img src="images/356 - Copy.png" alt="Anniversary Logo" class="h-16 w-auto max-h-20">
-</div>
-
+    <!-- Right Anniversary Logo -->
+    <div class="flex items-center gap-3">
+      <img src="images/355 KT 1.png" alt="Anniversary Logo" class="h-20 w-auto max-h-20 scale-125">
+    </div>
   
     <!-- Mobile Hamburger Icon -->
     <div class="md:hidden ml-auto block">
-      <button id="menu-toggle" class="text-2xl text-white focus:outline-none">
+      <button id="menu-toggle" class="text-2xl text-[#c59e76] focus:outline-none">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </header>
+  
+  
   
   <script>
     const menuToggle = document.getElementById('menu-toggle');
