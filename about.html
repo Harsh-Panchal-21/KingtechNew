@@ -107,7 +107,73 @@
 </head>
 
 <body>
+ 
+   <style>
+  @media (max-width: 768px) {
+    .service-detail {
+      padding: 30px 20px;
+      margin-top: 100px;
+    }
 
+    h2 {
+      font-size: 2rem !important;
+    }
+
+    .main-navbar {
+      flex-wrap: wrap;
+      padding: 15px 5%;
+    }
+
+    .main-navbar img {
+      height: 2.5rem;
+    }
+
+    .col-md-6 {
+      flex: 100%;
+      max-width: 100%;
+    }
+
+    .service-detail img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    footer {
+      padding: 40px 20px;
+    }
+
+    footer .grid {
+      display: block;
+    }
+
+    footer .grid > div {
+      margin-bottom: 2rem;
+    }
+
+    #mobile-menu {
+      background: white;
+      padding-bottom: 2rem;
+     }
+
+    #mobile-menu a {
+      font-size: 1.1rem;
+    }
+  }
+  @media (max-width: 768px) {
+  .main-navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-navbar .md\\:hidden.ml-auto {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+</style> 
 <header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
   <!-- Left Logo -->
   <div class="flex items-center gap-3">
@@ -123,12 +189,11 @@
 
   <!-- Desktop Nav Links -->
   <nav class="hidden md:flex md:gap-6 text-lg text-[#c59e76] justify-center flex-grow text-center">
-    <a href="index.html" class="hover:text-black">Home</a>
-    <a href="about.html" class="hover:text-black">About</a>
-    <a href="index.html#services" class="hover:text-black">Services</a>
-    <a href="index.html#portfolio" class="hover:text-black">Portfolio</a>
-    <a href="index.html#faq" class="hover:text-black">FAQ</a>
-    <a href="contact.html" class="hover:text-black">Contact</a>
+    <a href="index.html" class="hover:text-black " style="color: #1479C9;">Home</a>
+    <a href="about.html" class="hover:text-black" style="color: #1479C9;">About</a>
+    <a href="index.html#services" class="hover:text-black" style="color: #1479C9;">Services</a>
+     <a href="index.html#faq" class="hover:text-black" style="color: #1479C9;">FAQ</a>
+    <a href="contact.html" class="hover:text-black" style="color: #1479C9;">Contact</a>
   </nav>
 
   <!-- Right Anniversary Logo -->
@@ -142,8 +207,7 @@
   <a href="index.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Home</a>
   <a href="about.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">About</a>
   <a href="index.html#services" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Services</a>
-  <a href="index.html#portfolio" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Portfolio</a>
-  <a href="index.html#faq" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">FAQ</a>
+   <a href="index.html#faq" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">FAQ</a>
   <a href="contact.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Contact</a>
 
   <!-- Mobile Anniversary Logo -->
@@ -363,8 +427,7 @@
         <li><a href="index.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-home text-blue-500" style="color: #1479C9;"></i> Home</a></li>
         <li><a href="about.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-users text-blue-500" style="color: #1479C9;"></i> About Us</a></li>
         <li><a href="index.html#services" class="flex items-center gap-2 hover:underline"><i class="fas fa-briefcase text-blue-500" style="color: #1479C9;"></i> Services</a></li>
-        <li><a href="index.html#portfolio" class="flex items-center gap-2 hover:underline"><i class="fas fa-layer-group text-blue-500" style="color: #1479C9;"></i> Portfolio</a></li>
-        <li><a href="contact.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-headset text-blue-500" style="color: #1479C9;"></i> Contact Us</a></li>
+         <li><a href="contact.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-headset text-blue-500" style="color: #1479C9;"></i> Contact Us</a></li>
       </ul>
     </div>
 
