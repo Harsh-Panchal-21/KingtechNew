@@ -20,6 +20,12 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- Font Awesome (required for icons) -->
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<!-- Animate.css for menu animation -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
        <style>
     body {
       margin: 0;
@@ -28,30 +34,32 @@
     }
 
   /* Menu */
-  
+ 
+ 
   .main-navbar {
-  background-color: white !important; /* Based on uploaded image */
+  background-color: white !important;
   padding: 30px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
   z-index: 999;
+  border-bottom: 2px solid #1479C9;
 }
 
 .main-navbar a {
-  color: #c59e76; /* Beige */
+   color: #1479C9; /* Beige */
   margin: 0 10px;
-  font-size: 1.125rem;
+  font-size: 1.25rem; /* Slightly larger (was 1.125rem) */
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal; /* Remove bold */
   transition: color 0.3s ease;
 }
 
 .main-navbar a:hover {
-  color: #000; /* Change on hover to black for contrast */
+  color: #000; /* Hover to black */
 }
- 
+
 
     .hero {
       display: flex;
@@ -90,25 +98,7 @@
   margin-top: 1rem;
 }
 
-    .tabs {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
-      background-color: rgba(0, 0, 0, 0.4);
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
-    .tabs a {
-      color: white;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .tabs a:hover {
-      color: #facc15;
-    }
+ 
 
     @media (max-width: 768px) {
       .main-navbar .nav-links {
@@ -230,149 +220,245 @@
   height: auto;
  }
  
+  
+
   </style>
 </head>
 
 <body>
   <!-- Navbar -->
+   <!-- Font Awesome -->
+<header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
+  <!-- Left Logo -->
+  <div class="flex items-center gap-3">
+    <img src="images/KingTechLogo no tag.png" alt="King Tech Logo" class="h-10 w-auto">
+  </div>
+
+  <!-- Mobile Hamburger Icon -->
+  <div class="md:hidden ml-auto block">
+    <button id="menu-toggle" class="text-3xl text-[#c59e76] focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Desktop Nav Links -->
+  <nav class="hidden md:flex md:gap-6 text-lg text-[#c59e76] justify-center flex-grow text-center">
+    <a href="index.html" class="hover:text-black " style="color: #1479C9;">Home</a>
+    <a href="about.html" class="hover:text-black" style="color: #1479C9;">About</a>
+    <a href="index.html#services" class="hover:text-black" style="color: #1479C9;">Services</a>
+    <a href="index.html#portfolio" class="hover:text-black" style="color: #1479C9;">Portfolio</a>
+    <a href="index.html#faq" class="hover:text-black" style="color: #1479C9;">FAQ</a>
+    <a href="contact.html" class="hover:text-black" style="color: #1479C9;">Contact</a>
+  </nav>
+
+  <!-- Right Anniversary Logo -->
+  <div class="hidden md:flex items-center gap-3">
+    <img src="images/355 KT 2.png" alt="Anniversary Logo" class="h-16 w-auto max-h-20 transform scale-125">
+  </div>
+
+
+ <!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden flex-col md:hidden bg-white w-full border-t border-[#c59e76] animate__animated animate__fadeInDown">
+  <a href="index.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Home</a>
+  <a href="about.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">About</a>
+  <a href="index.html#services" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Services</a>
+  <a href="index.html#portfolio" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Portfolio</a>
+  <a href="index.html#faq" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">FAQ</a>
+  <a href="contact.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Contact</a>
+
+  <!-- Mobile Anniversary Logo -->
+  <div class="py-4 flex justify-center">
+    <img src="images/355 KT 2.png" alt="Anniversary Logo" class="h-16 w-auto max-h-20 scale-110 block md:hidden">
+  </div>
+</div>
+</header>
    
- 
-  <header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
-    <!-- Left Logo -->
-    <div class="flex items-center gap-3">
-      <img src="images/KingTechLogo no tag.png" alt="King Tech Logo" class="h-10 w-auto">
-    </div>
-  
-    <!-- Center Nav Links -->
-    <nav class="hidden md:flex gap-6 text-sm font-semibold text-[#c59e76] justify-center flex-grow text-center">
-      <a href="index.html" class="hover:text-black">Home</a>
-      <a href="about.html" class="hover:text-black">About</a>
-      <a href="index.html#services" class="hover:text-black">Services</a>
-      <a href="index.html#portfolio" class="hover:text-black">Portfolio</a>
-      <a href="index.html#faq" class="hover:text-black">FAQ</a>
-      <a href="contact.html" class="font-bold hover:text-black">Contact</a>
-    </nav>
-  
-    <!-- Right Anniversary Logo -->
-    <div class="flex items-center gap-3">
-      <img src="images/355 KT 2.png" alt="Anniversary Logo" class="h-20 w-auto max-h-20 scale-125">
-    </div>
-  
-    <!-- Mobile Hamburger Icon -->
-    <div class="md:hidden ml-auto block">
-      <button id="menu-toggle" class="text-2xl text-[#c59e76] focus:outline-none">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
-  
-  
-  
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const icon = menuToggle.querySelector('i');
-  
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
+<!-- Scripts -->
+<!-- JavaScript to Toggle Menu -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const icon = toggleBtn.querySelector('i');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  });
+
+  // Optional: Auto close on click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      icon.classList.add('fa-bars');
+      icon.classList.remove('fa-times');
     });
-  
-    // Optional: Close menu on link click
-    const navLinks = mobileMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          mobileMenu.classList.add('hidden');
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-times');
-        }
-      });
-    });
-  </script>
-  
-  
- 
-
- 
-   <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <img id="heroBg" class="bg-img" src="" alt="Background Image">
-    <h1 class="animate__animated animate__fadeInDown">Welcome to King Technology Inc</h1>
-    <p class="animate__animated animate__fadeInUp">Your Trusted Partner for Innovative IT Solutions</p>
-    <div class="tabs">
-      <a  class="animate__animated animate__fadeInDown"  href="Custom Software Development.html">Custom Software Development</a>
-      <a class="animate__animated animate__fadeInDown" href="web-development.html">Web Development</a>
-      <a class="animate__animated animate__fadeInDown"  href="Security Camera Systems.html">Security Camera Systems</a>
-      <a class="animate__animated animate__fadeInDown" href="cloudphone.html">Cloud Solutions</a>
-      <a class="animate__animated animate__fadeInDown"  href="Data Analytics.html">Data Analytics</a>
-      <a class="animate__animated animate__fadeInDown"  href="Cybersecurity Services.html">Cybersecurity</a>
-      <a class="animate__animated animate__fadeInDown"  href="it-support-maintenance.html">IT Support</a>
-
-    </div>
-  </section>
-
-  <!-- JavaScript -->
-  <script>
-    const backgrounds = [
-       'images/ol.png',
-       'images/oh4.png',
-       'images/oh6.png',
-      'images/oh6.jpg',
-     'images/oh7.png',
-    'https://www.2010officefurniture.com/wp-content/uploads/2024/03/01-ofs-gathr-workspace-3.jpg'  
-    ];
-    const heroBg = document.getElementById('heroBg');
-    const random = Math.floor(Math.random() * backgrounds.length);
-    heroBg.src = backgrounds[random];
- 
-
-    window.addEventListener('scroll', function () {
-      const nav = document.querySelector('.main-navbar');
-      nav.classList.toggle('shadow-md', window.scrollY > 10);
-    });
-  </script>
+  });
+</script>
 
  
 
-  
-<!-- IT Culture and Values Section -->
-<section id="it-values" class="py-24 text-white bg-gradient-to-r from-[#1a2980] to-[#26d0ce]">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-extrabold mb-4 text-black flex items-center justify-center gap-3">
-        <i class="fas fa-globe text-blue-600"></i>
-        Our IT Culture & Core Values
-      </h2>
-            <p class="text-lg mb-12 text-white/90">We don’t just deliver technology—we deliver trust, reliability, and vision.</p>
-  
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div class="bg-white/90 text-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
-          <div class="text-4xl text-indigo-600 mb-4">
-            <i class="fas fa-users"></i>
-          </div>
-          <h4 class="text-xl font-semibold mb-2">Client-Centric Approach</h4>
-          <p class="text-sm">We listen, understand, and deliver tailored solutions that align with our clients’ goals.</p>
+<!-- Hero Section -->
+<section id="hero" class="relative min-h-screen w-full flex flex-col text-white bg-center bg-cover transition-all duration-700">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm z-0"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 flex flex-1 flex-col justify-center items-center text-center px-4 sm:px-8">
+    <h15 class="text-3xl sm:text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
+      Welcome to King Technology Inc
+    </h15>
+    <p class="text-base sm:text-xl mb-6 animate__animated animate__fadeInUp">
+      Your Trusted Partner for Innovative IT Solutions
+    </p>
+
+    <!-- Tabs -->
+<!-- Tabs -->
+<div class="flex flex-wrap justify-center gap-3 mt-4 animate__animated animate__fadeInUp px-2">
+  <a href="Custom Software Development.html" class="text-sm sm:text-base px-3 py-2 bg-white text-gray-700 rounded-full shadow transition hover:text-white" style="--tw-bg-opacity: 1;" onmouseover="this.style.backgroundColor='#1479C9'" onmouseout="this.style.backgroundColor='white'">Custom Software</a>
+
+  <a href="web-development.html" class="text-sm sm:text-base px-3 py-2 bg-white text-gray-700 rounded-full shadow transition hover:text-white" style="--tw-bg-opacity: 1;" onmouseover="this.style.backgroundColor='#1479C9'" onmouseout="this.style.backgroundColor='white'">Web Development</a>
+
+  <a href="Security Camera Systems.html" class="text-sm sm:text-base px-3 py-2 bg-white text-gray-700 rounded-full shadow transition hover:text-white" style="--tw-bg-opacity: 1;" onmouseover="this.style.backgroundColor='#1479C9'" onmouseout="this.style.backgroundColor='white'">Security Systems</a>
+
+  <a href="cloudphone.html" class="text-sm sm:text-base px-3 py-2 bg-white text-gray-700 rounded-full shadow transition hover:text-white" style="--tw-bg-opacity: 1;" onmouseover="this.style.backgroundColor='#1479C9'" onmouseout="this.style.backgroundColor='white'">Cloud Solutions</a>
+
+  <a href="Data Analytics.html" class="text-sm sm:text-base px-3 py-2 bg-white text-gray-700 rounded-full shadow transition hover:text-white" style="--tw-bg-opacity: 1;" onmouseover="this.style.backgroundColor='#1479C9'" onmouseout="this.style.backgroundColor='white'">Data Analytics</a>
+
+  <a href="Cybersecurity Services.html" class="text-sm sm:text-base px-3 py-2 bg-white text-gray-700 rounded-full shadow transition hover:text-white" style="--tw-bg-opacity: 1;" onmouseover="this.style.backgroundColor='#1479C9'" onmouseout="this.style.backgroundColor='white'">Cybersecurity</a>
+
+  <a href="it-support-maintenance.html" class="text-sm sm:text-base px-3 py-2 bg-white text-gray-700 rounded-full shadow transition hover:text-white" style="--tw-bg-opacity: 1;" onmouseover="this.style.backgroundColor='#1479C9'" onmouseout="this.style.backgroundColor='white'">IT Support</a>
+</div>
+
+
+  </div>
+
+  <!-- Logo Strip -->
+  <div class="w-full z-10 mt-auto">
+    <div class="relative overflow-x-auto bg-gradient-to-r from-black/70 via-black/60 to-black/70 backdrop-blur-md py-5 px-4 rounded-t-3xl shadow-inner">
+      <div class="flex gap-5 min-w-max items-center animate-scroll-logos">
+        <!-- Logos (Repeat as needed) -->
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/dell.png" alt="Dell">
         </div>
-  
-        <div class="bg-white/90 text-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
-          <div class="text-4xl text-indigo-600 mb-4">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h4 class="text-xl font-semibold mb-2">Continuous Innovation</h4>
-          <p class="text-sm">We embrace new technologies and ideas to help our clients stay ahead in their industries.</p>
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/microsoft.png" alt="Microsoft">
         </div>
-  
-        <div class="bg-white/90 text-gray-800 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
-          <div class="text-4xl text-indigo-600 mb-4">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <h4 class="text-xl font-semibold mb-2">Integrity & Trust</h4>
-          <p class="text-sm">We build long-term relationships through transparency, honesty, and professionalism.</p>
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/duoLogo.png" alt="Duo">
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/Ubiquiti.png" alt="Ubiquiti">
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/logo.png" alt="Logo">
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/webrootlogo.png" alt="Webroot">
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/fortinet-logo.png" alt="Fortinet">
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/Cisco-logo.png" alt="Cisco">
+        </div>
+        <div class="bg-white p-3 rounded-xl shadow hover:scale-105 transition w-24 h-14 flex items-center justify-center">
+          <img class="max-h-10 object-contain" src="images/HP.png" alt="HP">
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Background Image Script -->
+<script>
+  const backgrounds = [
+    'images/ol.png',
+    'images/oh4.png',
+    'images/oh6.png',
+    'images/oh6.jpg',
+    'images/oh7.png',
+    'https://www.2010officefurniture.com/wp-content/uploads/2024/03/01-ofs-gathr-workspace-3.jpg'
+  ];
+
+  const hero = document.getElementById('hero');
+  const random = Math.floor(Math.random() * backgrounds.length);
+  hero.style.backgroundImage = `url('${backgrounds[random]}')`;
+  hero.style.backgroundSize = 'cover';
+  hero.style.backgroundPosition = 'center';
+  hero.style.backgroundRepeat = 'no-repeat';
+
+  // Optional: Navbar shadow on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.main-navbar');
+    if (nav) nav.classList.toggle('shadow-md', window.scrollY > 10);
+  });
+</script>
+
+
+<!-- Logo scroll animation CSS -->
+<style>
+@keyframes scroll-logos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-logos {
+  animation: scroll-logos 30s linear infinite;
+}
+</style>
+
+ 
+<!-- Logo Scroll Animation -->
+<style>
+@keyframes scroll-logos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-logos {
+  animation: scroll-logos 30s linear infinite;
+}
+</style>
+ 
+<!-- IT Culture and Values Section -->
+<section id="it-values" class="py-24">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-extrabold mb-4 text-gray-600 flex items-center justify-center gap-3" style="color: #1479C9;">
+      <i class="fas fa-globe" style="color: #1479C9;"></i>
+      Our IT Culture & Core Values
+    </h2>
+    <p class="text-lg mb-12 text-gray-600">
+      We don’t just deliver technology—we deliver trust, reliability, and vision.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="bg-white/90 text-gray-700 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
+        <div class="text-4xl mb-4">
+          <i class="fas fa-users" style="color: #1479C9;"></i>
+        </div>
+        <h4 class="text-xl font-semibold mb-2">Client-Centric Approach</h4>
+        <p class="text-sm">We listen, understand, and deliver tailored solutions that align with our clients’ goals.</p>
+      </div>
+
+      <div class="bg-white/90 text-gray-700 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
+        <div class="text-4xl mb-4">
+          <i class="fas fa-lightbulb" style="color: #1479C9;"></i>
+        </div>
+        <h4 class="text-xl font-semibold mb-2">Continuous Innovation</h4>
+        <p class="text-sm">We embrace new technologies and ideas to help our clients stay ahead in their industries.</p>
+      </div>
+
+      <div class="bg-white/90 text-gray-700 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition">
+        <div class="text-4xl mb-4">
+          <i class="fas fa-handshake" style="color: #1479C9;"></i>
+        </div>
+        <h4 class="text-xl font-semibold mb-2">Integrity & Trust</h4>
+        <p class="text-sm">We build long-term relationships through transparency, honesty, and professionalism.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
  
   <style>
          
@@ -445,88 +531,173 @@
       color: #ffffff;
     }
   </style>
-
-<!-- Services Section -->
-<section id="services" class="py-24 bg-gradient-to-b from-white to-indigo-50 text-gray-800">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-extrabold mb-4 text-black flex items-center justify-center gap-3">
-          <i class="fas fa-rocket text-blue-600"></i>
-          Explore Everything We Offer
-        </h2>
-                <p class="text-lg text-gray-600">From software to security, we build solutions for businesses of all sizes.</p>
-      </div>
-  
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        
-        <a href="web-development.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">🌐 Web & App Development</h3>
-          <p class="text-sm text-gray-700">Custom websites, eCommerce platforms, and mobile apps that scale with you.</p>
-        </a>
-         <a href="it-support-maintenance.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">🔧 Full-Service IT Support</h3>
-          <p class="text-sm text-gray-700">Ongoing maintenance, tech troubleshooting, and remote assistance for businesses.</p>
-        </a>
-  
-        <a href="cloudphone.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">📞 Cloud Phone Systems</h3>
-          <p class="text-sm text-gray-700">VoIP-based systems with advanced call routing, voicemail-to-email, and CRM integration.</p>
-        </a>
-  
-        <a href="Security Camera Systems.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">📸 Security Camera Systems</h3>
-          <p class="text-sm text-gray-700">Smart surveillance solutions with remote monitoring and cloud storage integration.</p>
-        </a>
-  
-        <a href="AI.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">🧠 AI & Machine Learning</h3>
-          <p class="text-sm text-gray-700">Intelligent automation, analytics, and pattern detection for smarter decisions.</p>
-        </a>
-  
-        <a href="Data Analytics.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">📊 Data Analytics & Reporting</h3>
-          <p class="text-sm text-gray-700">Turn your data into clear dashboards and actionable business insights.</p>
-        </a>
-  
-        <a href="Ecommerce Solutions.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">🛒 E-Commerce Solutions</h3>
-          <p class="text-sm text-gray-700">Online store design, inventory management, secure checkout, and payment gateways.</p>
-        </a>
-  
-        <a href="Custom Software Development.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">🧰 Custom Software Development</h3>
-          <p class="text-sm text-gray-700">Tailor-made software tools built to meet your workflow and business goals.</p>
-        </a>
-  
-        <a href="Cybersecurity Services.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">🔐 Cybersecurity Services</h3>
-          <p class="text-sm text-gray-700">Firewalls, malware protection, and compliance consulting for digital protection.</p>
-        </a>
-  
-        <a href="Email Marketing Automation.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">📥 Email Marketing & Automation</h3>
-          <p class="text-sm text-gray-700">Campaign design, segmentation, and performance tracking made simple.</p>
-        </a>
-  
-        <a href="Social Media Marketing.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">📣 Social Media Marketing</h3>
-          <p class="text-sm text-gray-700">Engage your audience with content strategy, scheduling, and ad management.</p>
-        </a>
-  
-        <a href="Property Management System.html" class="block bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-bold text-black-600 mb-2">🏨 Property Management Systems</h3>
-          <p class="text-sm text-gray-700">Manage bookings, payments, rooms, and customer check-ins all in one place.</p>
-        </a>
-  
-      </div>
  
+
+  <section id="services" class="py-24 bg-gradient-to-r from-white to-indigo-50 text-gray-600">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 flex items-center justify-center gap-3" style="color: #1479C9;">
+        <i class="fas fa-rocket" style="color: #1479C9;"></i> Our Services
+      </h2>
+      <p class="text-lg">Explore modern tech solutions designed for growth.</p>
     </div>
-  </section>
 
- 
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <!-- Custom Software -->
+      <a href="Custom Software Development.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/uploads/job_description_template/Software_Development_Manager.jpg=ws720x480" class="w-full h-44 object-cover" alt="Custom Software">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-tools" style="color: #1479C9;"></i> Custom Software Development
+          </h3>
+          <p class="text-sm">Tailor-made tools built to match your workflow and business goals.</p>
+        </div>
+      </a>
+
+      <!-- Web & App Development -->
+      <a href="web-development.html" class="block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="https://ddi-dev.com/uploads/web-team.png" class="w-full h-40 object-cover" alt="Web & App Development">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-globe" style="color: #1479C9;"></i> Web & App Development
+          </h3>
+          <p class="text-sm">Custom websites, eCommerce platforms, and mobile apps that scale with you.</p>
+        </div>
+      </a>
+
+      <!-- Cloud Phone -->
+      <a href="cloudphone.html" class="block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="https://www.zultys.com/wp-content/uploads/2024/04/Home_Hero_x4.png" class="w-full h-40 object-cover" alt="Cloud Phone Systems">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-phone-alt" style="color: #1479C9;"></i> Cloud Phone Systems
+          </h3>
+          <p class="text-sm">VoIP systems with call routing, voicemail, and CRM integration.</p>
+        </div>
+      </a>
+
+      <!-- Security Cameras -->
+      <a href="Security Camera Systems.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://www.albaraqsecurity.com/dynamic/Blog/home_security_camera_in_dubai.jpg" class="w-full h-44 object-cover" alt="Security Camera">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-video" style="color: #1479C9;"></i> Security Camera Systems
+          </h3>
+          <p class="text-sm">Smart surveillance solutions with remote monitoring and cloud storage.</p>
+        </div>
+      </a>
+
+      <!-- Cabling -->
+      <a href="cabling-installation.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://cdn.prod.website-files.com/6437af0e2d5def609811ad85/66e8035fb3e64554529fb618_AD_4nXdlzJt-3NZnRBd6haM0mw16Wgt1V1fWY-SICZteu3tAdPBrGOj5wi2Y2U-GYfHDAtqVALD7LducwuXPlH4qBLvTiYrl_ExUreHf1IifxaIHi5M4sXnQPWwmsLm8eNBGqSNl5jadmxBrEgjMGV0mcrmAhmE.jpeg" class="w-full h-44 object-cover" alt="Cabling and Installation">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-network-wired" style="color: #1479C9;"></i> Cabling & Installation
+          </h3>
+          <p class="text-sm">Structured network cabling, fiber, and on-site hardware installations for seamless connectivity.</p>
+        </div>
+      </a>
+
+      <!-- Hosting -->
+      <a href="hosting.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://www.growthaccelerationpartners.com/wp-content/uploads/2023/09/Dont-Take-Cloud-Native-Security-for-Granted-4-Strategies-to-Defend-Your-Data.webp" class="w-full h-44 object-cover" alt="Hosting & Infrastructure">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-server" style="color: #1479C9;"></i> Hosting & Infrastructure
+          </h3>
+          <p class="text-sm">Reliable cloud hosting, VPS, and infrastructure solutions optimized for speed and security.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="additional-services" class="py-24 bg-gradient-to-r from-indigo-50 to-white text-gray-600">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 flex items-center justify-center gap-3" style="color: #1479C9;">
+        <i class="fas fa-plus-circle" style="color: #1479C9;"></i> Additional Services
+      </h2>
+      <p class="text-lg">Discover more ways we help your business stay ahead with smart technology solutions.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <!-- IT Support -->
+      <a href="it-support-maintenance.html" class="block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="https://t4.ftcdn.net/jpg/07/56/53/31/360_F_756533104_P9qyAoVr0GzbPbCOauLYIK7TTRZLPwRL.jpg" class="w-full h-40 object-cover" alt="IT Support & Maintenance">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-wrench" style="color: #1479C9;"></i> Full-Service IT Support
+          </h3>
+          <p class="text-sm">Ongoing maintenance, tech troubleshooting, and remote assistance.</p>
+        </div>
+      </a>
+
+      <!-- AI & Machine Learning -->
+      <a href="AI.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://www.vbeyond.com/wp-content/uploads/2025/02/Building-an-Enterprise-AI-Team-How-to-Find-Top-Machine-Learning-Engineers.webp" class="w-full h-44 object-cover" alt="AI & Machine Learning">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-brain" style="color: #1479C9;"></i> AI & Machine Learning
+          </h3>
+          <p class="text-sm">Intelligent automation, analytics, and pattern detection for smarter decisions.</p>
+        </div>
+      </a>
+
+      <!-- Data Analytics -->
+      <a href="Data Analytics.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://business.laverne.edu/masters-in-data-analytics/wp-content/uploads/sites/14/2021/01/MS-Data-Analytics-992x558.jpg" class="w-full h-44 object-cover" alt="Data Analytics">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-chart-line" style="color: #1479C9;"></i> Data Analytics & Reporting
+          </h3>
+          <p class="text-sm">Turn your data into dashboards and actionable insights.</p>
+        </div>
+      </a>
+
+      <!-- E-Commerce Solutions -->
+      <a href="Ecommerce Solutions.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://www.sydle.com/blog/assets/post/what-is-e-commerce-6101ad385378ca509b26212c/e-commerce.jpg" class="w-full h-44 object-cover" alt="E-Commerce">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-shopping-cart" style="color: #1479C9;"></i> E-Commerce Solutions
+          </h3>
+          <p class="text-sm">Online store design, inventory control, secure checkout, and payment gateways.</p>
+        </div>
+      </a>
+
+      <!-- Cybersecurity -->
+      <a href="Cybersecurity Services.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://rockwellautomation.scene7.com/is/image/rockwellautomation/16x9-project-manager-computer-science-engineer-talking-using-digital-tablet-computer-SHS-1798109056.2560.jpg" class="w-full h-44 object-cover" alt="Cybersecurity">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-shield-alt" style="color: #1479C9;"></i> Cybersecurity Services
+          </h3>
+          <p class="text-sm">Firewalls, malware protection, and compliance consulting.</p>
+        </div>
+      </a>
+
+      <!-- Property Management -->
+      <a href="Property Management System.html" class="block bg-white rounded-2xl overflow-hidden shadow hover:shadow-2xl transition">
+        <img src="https://blog.appfolio.com/wp-content/uploads/2018/01/modern-property-manager-blog.jpg" class="w-full h-44 object-cover" alt="Property Management">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <i class="fas fa-hotel" style="color: #1479C9;"></i> Property Management Systems
+          </h3>
+          <p class="text-sm">Manage bookings, payments, rooms, and check-ins all in one system.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 
-<!--Preferred Partners Section with Carousel-->
+<!--Preferred Partners Section with Carousel -->
+<!--  
 <section id="portfolio" class="py-24 bg-gradient-to-r from-blue-50 to-white text-center"
 >
        <div class="text-center mb-5">
@@ -541,6 +712,8 @@
         <div class="slider">
             <div class="slide-track">
                 <!--Logos repeated twice for infinite scroll-->
+
+                <!--  
                 <div class="partner-logo"><img src="images/dell.png" alt="Dell"></div>
                 <div class="partner-logo"><img src="images/microsoft.png" alt="Microsoft"></div>
                 <div class="partner-logo"><img src="images/duoLogo.png" alt="Intel"></div>
@@ -566,194 +739,153 @@
     </div>
 </section>
 
+-->
+
 <div class="anniversary-seal">
     <img src="images/356.png" alt="35 Years Anniversary" />
   </div>
    
- 
-  <section id="technologies" class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-extrabold mb-4 text-black flex items-center justify-center gap-3">
-        <i class="fas fa-microchip text-blue-600"></i>
-        Technologies We Use
-      </h2>
-            <p class="text-gray-600 mb-12 text-lg">
-        We use modern frameworks, languages, and tools to deliver robust, scalable, and secure solutions.
-      </p>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center text-gray-800 text-sm font-semibold">
-        <div>HTML5</div>
-        <div>CSS3</div>
-        <div>JavaScript</div>
-        <div>React</div>
-        <div>Node.js</div>
-        <div>SQL Server</div>
-        <div>MongoDB</div>
-        <div>Python</div>
-        <div>Tailwind CSS</div>
-        <div>Bootstrap</div>
-        <div>GitHub</div>
-        <div>AWS</div>
-        <div>ASP.NET</div>
-        <div>C#</div>
-        <div>C++</div>
-        <div>SQL</div>
-        <div>Java</div>
-        <div>PHP</div>
+ <section id="technologies" class="py-24 bg-white text-gray-700">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-extrabold mb-4 flex items-center justify-center gap-3" style="color: #1479C9;">
+          <i class="fas fa-microchip" style="color: #1479C9;"></i>
+      Technologies We Use
+    </h2>
+    <p class="text-lg mb-12">We use modern frameworks, languages, and tools to deliver robust, scalable, and secure solutions.</p>
 
-
-      </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center text-sm font-semibold">
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-html5" style="color: #1479C9;"></i> HTML5</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-css3-alt" style="color: #1479C9;"></i> CSS3</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-js-square" style="color: #1479C9;"></i> JavaScript</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-react" style="color: #1479C9;"></i> React</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-node-js" style="color: #1479C9;"></i> Node.js</div>
+      <div class="flex items-center justify-center gap-2"><i class="fas fa-database" style="color: #1479C9;"></i> SQL Server</div>
+      <div class="flex items-center justify-center gap-2"><i class="fas fa-leaf" style="color: #1479C9;"></i> MongoDB</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-python" style="color: #1479C9;"></i> Python</div>
+      <div class="flex items-center justify-center gap-2"><i class="fas fa-wind" style="color: #1479C9;"></i> Tailwind CSS</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-bootstrap" style="color: #1479C9;"></i> Bootstrap</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-github" style="color: #1479C9;"></i> GitHub</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-aws" style="color: #1479C9;"></i> AWS</div>
+      <div class="flex items-center justify-center gap-2"><i class="fas fa-code" style="color: #1479C9;"></i> ASP.NET</div>
+      <div class="flex items-center justify-center gap-2"><i class="fas fa-code" style="color: #1479C9;"></i> C#</div>
+      <div class="flex items-center justify-center gap-2"><i class="fas fa-code" style="color: #1479C9;"></i> C++</div>
+      <div class="flex items-center justify-center gap-2"><i class="fas fa-database" style="color: #1479C9;"></i> SQL</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-java" style="color: #1479C9;"></i> Java</div>
+      <div class="flex items-center justify-center gap-2"><i class="fab fa-php" style="color: #1479C9;"></i> PHP</div>
     </div>
-  </section>
-  
+  </div>
+</section>
+
   <!-- Testimonials Section -->
-<section id="testimonials" class="py-24 bg-white text-gray-800">
+<section id="testimonials" class="py-24 bg-white text-gray-700">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-4xl font-extrabold mb-4 text-center text-black flex items-center justify-center gap-3">
-      <i class="fas fa-comments text-blue-600"></i>
+    <h2 class="text-4xl font-extrabold mb-4 text-center flex items-center justify-center gap-3" style="color: #1479C9;">
+      <i class="fas fa-comments" style="color: #1479C9;"></i>
       What Our Clients Say
     </h2>
-    <p class="text-center text-gray-600 mb-12">Real feedback from businesses we’ve empowered through technology.</p>
+    <p class="text-center mb-12 text-gray-600">Real feedback from businesses we’ve empowered through technology.</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       <!-- Review 1 -->
       <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="italic text-gray-700">“King Tech transformed our outdated infrastructure into a modern, secure system. The team was responsive and professional throughout.”</p>
-        <div class="mt-4 font-semibold text-blue-700">– Sarah M., Healthcare Industry</div>
+        <p class="italic">“King Tech transformed our outdated infrastructure into a modern, secure system. The team was responsive and professional throughout.”</p>
+        <div class="mt-4 font-semibold" style="color: #1479C9;">– Sarah M., Healthcare Industry</div>
       </div>
 
       <!-- Review 2 -->
       <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="italic text-gray-700">“Outstanding customer service and quick turnaround. Their cloud solutions helped us scale our operations significantly.”</p>
-        <div class="mt-4 font-semibold text-blue-700">– James L., Retail Manager</div>
+        <p class="italic">“Outstanding customer service and quick turnaround. Their cloud solutions helped us scale our operations significantly.”</p>
+        <div class="mt-4 font-semibold" style="color: #1479C9;">– James L., Retail Manager</div>
       </div>
 
       <!-- Review 3 -->
       <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="italic text-gray-700">“The custom software they built was exactly what we needed. Great communication and expert developers!”</p>
-        <div class="mt-4 font-semibold text-blue-700">– Amanda P., Logistics Coordinator</div>
+        <p class="italic">“The custom software they built was exactly what we needed. Great communication and expert developers!”</p>
+        <div class="mt-4 font-semibold" style="color: #1479C9;">– Amanda P., Logistics Coordinator</div>
       </div>
 
       <!-- Review 4 -->
       <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="italic text-gray-700">“We trust King Tech with all our IT support needs. Their knowledge and reliability are unmatched.”</p>
-        <div class="mt-4 font-semibold text-blue-700">– Daniel R., Financial Consultant</div>
+        <p class="italic">“We trust King Tech with all our IT support needs. Their knowledge and reliability are unmatched.”</p>
+        <div class="mt-4 font-semibold" style="color: #1479C9;">– Daniel R., Financial Consultant</div>
       </div>
 
       <!-- Review 5 -->
       <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="italic text-gray-700">“They completely revamped our eCommerce website. Our traffic and conversions improved within weeks!”</p>
-        <div class="mt-4 font-semibold text-blue-700">– Priya K., Online Store Owner</div>
+        <p class="italic">“They completely revamped our eCommerce website. Our traffic and conversions improved within weeks!”</p>
+        <div class="mt-4 font-semibold" style="color: #1479C9;">– Priya K., Online Store Owner</div>
       </div>
 
       <!-- Review 6 -->
       <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="italic text-gray-700">“From security to software – they’ve done it all for us. Highly recommended for any business needing IT solutions.”</p>
-        <div class="mt-4 font-semibold text-blue-700">– Tom B., Manufacturing Director</div>
+        <p class="italic">“From security to software – they’ve done it all for us. Highly recommended for any business needing IT solutions.”</p>
+        <div class="mt-4 font-semibold" style="color: #1479C9;">– Tom B., Manufacturing Director</div>
       </div>
     </div>
   </div>
 </section>
 
-  
+ 
 
-    <!-- Why Choose Us Section -->
-<section id="why-us" class="py-24 bg-gradient-to-r from-blue-50 to-white">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-extrabold mb-4 text-black">
-        <i class="fas fa-briefcase text-indigo-600 mr-2"></i> Why Choose King Tech Inc?
-      </h2>
-            <p class="text-lg text-gray-600 mb-12">We blend innovation with reliability to deliver top-tier IT solutions tailored to your business.</p>
-  
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-        
-        <!-- Card 1 -->
-        <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
-          <div class="text-3xl text-indigo-600 mb-4">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Future-Ready Solutions</h4>
-          <p class="text-gray-600">We build scalable, innovative systems that evolve with your business.</p>
-        </div>
-  
-        <!-- Card 2 -->
-        <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
-          <div class="text-3xl text-blue-600 mb-4">
-            <i class="fas fa-headset"></i>
-          </div>
-          
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Exceptional Support</h4>
-          <p class="text-gray-600">Our friendly support team is always here to help — fast response guaranteed.</p>
-        </div>
-  
-        <!-- Card 3 -->
-        <div class="bg-white shadow-xl rounded-2xl p-8 hover:shadow-2xl transition duration-300">
-          <div class="text-3xl text-blue-600 mb-4">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Security & Trust</h4>
-          <p class="text-gray-600">We prioritize security and transparency in every project we deliver.</p>
-        </div>
-  
-      </div>
-    </div>
-  </section>
   
   <!-- FAQ Section -->
-<section id="faq" class="py-24 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-extrabold mb-4 text-black text-center flex items-center justify-center gap-3">
-        <i class="fas fa-question-circle text-blue-600"></i>
-        Frequently Asked Questions
-      </h2>
-        
-      <div class="space-y-6">
-        <!-- FAQ Item 1 -->
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <button class="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none flex justify-between items-center faq-toggle">
-            How long does a typical project take?
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="mt-4 text-gray-600 faq-answer hidden">
-            Most small to mid-size projects take between 2 to 6 weeks depending on the complexity, timeline, and requirements.
-          </div>
-        </div>
-  
-        <!-- FAQ Item 2 -->
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <button class="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none flex justify-between items-center faq-toggle">
-            Do you offer support after the project is completed?
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="mt-4 text-gray-600 faq-answer hidden">
-            Absolutely. We provide ongoing maintenance and support packages based on your needs — from bug fixes to performance improvements.
-          </div>
-        </div>
-  
-        <!-- FAQ Item 3 -->
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <button class="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none flex justify-between items-center faq-toggle">
-            Can you work with my existing systems or software?
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="mt-4 text-gray-600 faq-answer hidden">
-            Yes! We specialize in system integrations and can work with your existing infrastructure or legacy tools.
-          </div>
-        </div>
-  
-        <!-- FAQ Item 4 -->
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <button class="w-full text-left text-lg font-semibold text-gray-800 focus:outline-none flex justify-between items-center faq-toggle">
-            How do I get a quote?
-            <i class="fas fa-chevron-down transition-transform duration-300"></i>
-          </button>
-          <div class="mt-4 text-gray-600 faq-answer hidden">
-            Simply fill out the project inquiry form above or contact us directly via email or phone. We'll get back to you with an estimate within 24–48 hours.
-          </div>
+<section id="faq" class="py-24 bg-gray-100 text-gray-700">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl font-extrabold mb-4 text-center flex items-center justify-center gap-3"style="color: #1479C9;">
+      <i class="fas fa-question-circle" style="color: #1479C9;"></i>
+      Frequently Asked Questions
+    </h2>
+
+    <div class="space-y-6">
+
+      <!-- FAQ Item 1 -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <button class="w-full text-left text-lg font-semibold text-gray-700 focus:outline-none flex justify-between items-center faq-toggle">
+          How long does a typical project take?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="mt-4 text-gray-600 faq-answer hidden">
+          Most small to mid-size projects take between 2 to 6 weeks depending on the complexity, timeline, and requirements.
         </div>
       </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <button class="w-full text-left text-lg font-semibold text-gray-700 focus:outline-none flex justify-between items-center faq-toggle">
+          Do you offer support after the project is completed?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="mt-4 text-gray-600 faq-answer hidden">
+          Absolutely. We provide ongoing maintenance and support packages based on your needs — from bug fixes to performance improvements.
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <button class="w-full text-left text-lg font-semibold text-gray-700 focus:outline-none flex justify-between items-center faq-toggle">
+          Can you work with my existing systems or software?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="mt-4 text-gray-600 faq-answer hidden">
+          Yes! We specialize in system integrations and can work with your existing infrastructure or legacy tools.
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <button class="w-full text-left text-lg font-semibold text-gray-700 focus:outline-none flex justify-between items-center faq-toggle">
+          How do I get a quote?
+          <i class="fas fa-chevron-down transition-transform duration-300"></i>
+        </button>
+        <div class="mt-4 text-gray-600 faq-answer hidden">
+          Simply fill out the project inquiry form above or contact us directly via email or phone. We'll get back to you with an estimate within 24–48 hours.
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
   <script>
     document.querySelectorAll('.faq-toggle').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -774,146 +906,71 @@
     });
   </script>
    <!-- Contact CTA Banner -->
-<section  id="contact"  class="py-24 bg-gradient-to-r from-blue-50 to-white text-center">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-extrabold mb-4 flex items-center justify-center gap-3 text-black">
-        <i class="fas fa-phone-alt text-blue-600"></i>
-        Ready to Get Started?
-      </h2>
-            <p class="text-lg mb-8">Let’s talk about how King Tech Inc can help take your business to the next level.</p>
-      <a href="contact.html" class="inline-block bg-white text-indigo-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition">
-        Contact Us Today
-      </a>
-    </div>
-  </section>
-    
-      
- 
-   
-     
-  <footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-black py-16">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-      <!-- About Section -->
-      <div>
-        <a href="old.html" class="inline-block bg-white p-2  ">
-          <img src="images/KingTechLogo no tag.png" alt="King Tech Inc Logo" class="h-12 object-contain">
-        </a>
-        <h5 class="mt-6 text-lg font-bold text-black">About King Tech Inc</h5>
-        <p class="text-sm text-black leading-relaxed mt-2">
-          King Technology Inc. provides comprehensive IT consulting services to public and private sector clients. Locally owned and operated, proudly serving Central Illinois’ technology needs for over 30 years.
-        </p>
-        <div class="flex space-x-4 mt-4">
-          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-  
-      <!-- Quick Links Section -->
-      <div>
-        <h5 class="text-lg font-bold text-black mb-4">Quick Links</h5>
-        <ul class="space-y-2 text-sm">
-          <li><a href="old.html" class="text-black hover:underline">Home</a></li>
-          <li><a href="#it-values" class="text-black hover:underline">About Us</a></li>
-          <li><a href="#services" class="text-black hover:underline">Services</a></li>
-          <li><a href="#portfolio" class="text-black hover:underline">Portfolio</a></li>
-          <li><a href="#contact" class="text-black hover:underline">Contact Us</a></li>
-        </ul>
-      </div>
-  
-      <!-- Contact Info Section -->
-      <div>
-        <h5 class="text-lg font-bold text-black mb-4">Contact Us</h5>
-        <ul class="space-y-3 text-sm">
-          <li class="text-black"><i class="fas fa-map-marker-alt mr-2"></i> 3 N Old State Capitol Plaza, Springfield, IL 62701</li>
-          <li class="text-black"><i class="fas fa-phone mr-2"></i> +1 217-522-6700</li>
-          <li class="text-black"><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@kingtech.net" class="text-black hover:underline">info@kingtech.net</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-10 text-center text-sm text-black border-t border-black/10 pt-6">
-      &copy; 2025 King Technology Inc. All rights reserved.
-    </div>
-  </footer>
-
-  <!-- Popup Form -->
-<div id="popupForm" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 hidden">
-  <div class="bg-white rounded-2xl shadow-lg w-full max-w-4xl p-8 grid md:grid-cols-2 gap-8 relative animate__animated animate__fadeInDown">
-
-    <!-- Left Info -->
-    <div>
-      <h2 class="text-2xl font-bold text-gray-900 mb-4">Your Future, Our Commitment</h2>
-      <p class="text-gray-600 mb-6">We empower your journey with AI, Cloud, DevOps, Cybersecurity & more.</p>
-
-      <div class="grid grid-cols-2 gap-4 text-center">
-        <div><p class="text-3xl font-bold text-pink-600">20+</p><p class="text-sm">Years of experience</p></div>
-        <div><p class="text-3xl font-bold text-yellow-500">1000+</p><p class="text-sm">Successful projects</p></div>
-        <div><p class="text-3xl font-bold text-blue-600">80+</p><p class="text-sm">Qualified experts</p></div>
-        <div><p class="text-3xl font-bold text-green-600">25+</p><p class="text-sm">Industries covered</p></div>
-      </div>
-
-      <div class="mt-6 p-4 bg-pink-50 rounded-xl flex items-center gap-4">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp" class="w-10 h-10">
-        <div>
-          <p class="text-sm font-medium text-gray-800">Scan QR to connect on WhatsApp</p>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR Code" class="mt-2 w-24">
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Form -->
-    <form class="space-y-4">
-      <h2 class="text-xl font-semibold text-gray-900">Together, Let’s Create Your Success!</h2>
-      <div class="grid grid-cols-2 gap-4">
-        <input type="text" placeholder="Your First Name*" class="border border-gray-300 rounded px-3 py-2 w-full" />
-        <input type="email" placeholder="Email*" class="border border-gray-300 rounded px-3 py-2 w-full" />
-        <input type="text" placeholder="+1 Phone Number" class="border border-gray-300 rounded px-3 py-2 w-full" />
-        <input type="text" placeholder="Interested Service" class="border border-gray-300 rounded px-3 py-2 w-full" />
-        <select class="border border-gray-300 rounded px-3 py-2 w-full">
-          <option>Project Budget</option>
-          <option>$500 - $5,000</option>
-          <option>$5,000 - $20,000</option>
-          <option>$20,000+</option>
-        </select>
-        <select class="border border-gray-300 rounded px-3 py-2 w-full">
-          <option>Country</option>
-          <option>United States</option>
-          <option>India</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <textarea rows="3" placeholder="Brief project description..." class="w-full border border-gray-300 rounded px-3 py-2"></textarea>
-      <label class="text-sm flex items-center gap-2">
-        <input type="checkbox" />
-        I agree to the <a href="#" class="text-blue-600 underline">Privacy Policy</a>
-      </label>
-      <div class="flex items-center gap-4">
-        <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-      </div>
-      <button type="submit" class="w-full py-3 text-white font-bold rounded-full bg-gradient-to-r from-pink-500 to-red-500 hover:opacity-90">
-        Submit Your Request
-      </button>
-    </form>
-
-    <!-- Close Button -->
-    <button onclick="closePopup()" class="absolute top-4 right-4 text-2xl text-red-500 hover:text-red-700">&times;</button>
+<section id="contact" class="py-24 bg-gradient-to-r from-blue-50 to-white text-center text-gray-700">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl font-extrabold mb-4 flex items-center justify-center gap-3" style="color: #1479C9;">
+      <i class="fas fa-phone-alt" style="color: #1479C9;"></i>
+      Ready to Get Started?
+    </h2>
+    <p class="text-lg mb-8 text-gray-600">
+      Let’s talk about how King Tech Inc can help take your business to the next level.
+    </p>
+    <a href="contact.html" class="inline-block bg-white text-[#1479C9] font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-gray-100 transition">
+      Contact Us Today
+    </a>
   </div>
-</div>
+</section>
+<footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-gray-700 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
-<script>
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('popupForm').classList.remove('hidden');
-    }, 3000); // Delay for 3 seconds
-  });
+    <!-- About -->
+    <div>
+      <a href="index.html" class="inline-block bg-white p-2 rounded shadow">
+        <img src="images/kingtech.png" alt="King Tech Inc Logo" class="h-12 object-contain">
+      </a>
+      <h5 class="mt-6 text-lg font-bold" style="color: #1479C9;">About King Tech Inc</h5>
+      <p class="text-sm mt-2">Locally owned and operated, proudly serving Central Illinois' technology needs for over 30 years.</p>
+      <div class="flex space-x-4 mt-4 text-xl text-blue-500">
+        <a href="#"><i class="fab fa-facebook-f hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-x-twitter hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-instagram hover:text-blue-500" style="color: #1479C9;"></i></a>
+      </div>
+    </div>
 
-  function closePopup() {
-    document.getElementById('popupForm').classList.add('hidden');
-  }
-</script>
+    <!-- Quick Links -->
+    <div>
+      <h5 class="text-lg font-bold mb-4" style="color: #1479C9;">Quick Links</h5>
+      <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-home text-blue-500" style="color: #1479C9;"></i> Home</a></li>
+        <li><a href="about.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-users text-blue-500" style="color: #1479C9;"></i> About Us</a></li>
+        <li><a href="index.html#services" class="flex items-center gap-2 hover:underline"><i class="fas fa-briefcase text-blue-500" style="color: #1479C9;"></i> Services</a></li>
+        <li><a href="index.html#portfolio" class="flex items-center gap-2 hover:underline"><i class="fas fa-layer-group text-blue-500" style="color: #1479C9;"></i> Portfolio</a></li>
+        <li><a href="contact.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-headset text-blue-500" style="color: #1479C9;"></i> Contact Us</a></li>
+      </ul>
+    </div>
 
-  
+    <!-- Contact -->
+    <div>
+      <h5 class="text-lg font-bold mb-4"style="color: #1479C9;">Contact Us</h5>
+      <ul class="space-y-3 text-sm">
+        <li><i class="fas fa-map-marker-alt mr-2 text-blue-500" style="color: #1479C9;"></i> 3 N Old State Capitol Plaza, Springfield, IL 62701</li>
+        <li><i class="fas fa-phone mr-2 text-blue-500" style="color: #1479C9;"></i> +1 217-522-6700</li>
+        <li>
+          <i class="fas fa-envelope mr-2 text-blue-500"></i>
+          <a href="mailto:info@kingtech.net" class="hover:underline">info@kingtech.net</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10 text-center text-sm text-gray-600 border-t border-gray-300 pt-6">
+    &copy; 2025 King Technology Inc. All rights reserved.
+  </div>
+</footer>
+
+
+ 
 
 </body>
 

@@ -17,27 +17,29 @@
     }
       /* Menu */
   
-  .main-navbar {
-  background-color: white !important; /* Based on uploaded image */
+
+      .main-navbar {
+  background-color: white !important;
   padding: 30px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
   z-index: 999;
+  border-bottom: 2px solid #1479C9;
 }
 
 .main-navbar a {
-  color: #c59e76; /* Beige */
+  color: #1479C9; /* Beige */
   margin: 0 10px;
-  font-size: 1.125rem;
+  font-size: 1.25rem; /* Slightly larger (was 1.125rem) */
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal; /* Remove bold */
   transition: color 0.3s ease;
 }
 
 .main-navbar a:hover {
-  color: #000; /* Change on hover to black for contrast */
+  color: #000; /* Hover to black */
 }
 
     .service-detail {
@@ -141,10 +143,12 @@
   <div class="container">
     <section class="service-detail">
       <div class="text-center mb-5">
-        <h2>Email Marketing & Automation</h2>
-        <p class="lead">Drive engagement, conversions, and customer retention with smart email campaigns powered by automation.</p>
+        <h2 style="font-size: 3.5rem; color: #1479C9;"> Email Marketing & Automation</h2>
+        <p style="font-size: 0.8rem; color: #555;">
+          Drive engagement, conversions, and customer retention with smart email campaigns powered by automation.
+        </p>
       </div>
-
+      
       <div class="row align-items-center">
         <div class="col-md-6 mb-4">
           <img src="https://www.act.com/uploads/2021/01/email-send-ss-1920-800x450-1.jpg" alt="Email Marketing" class="img-fluid">

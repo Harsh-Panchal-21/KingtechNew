@@ -1,237 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | KingTech Inc</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | King Tech Inc</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
     }
 
-       /* Menu */
-  
+       
   .main-navbar {
-  background-color: white !important; /* Based on uploaded image */
+  background-color: white !important;
   padding: 30px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
   z-index: 999;
+  border-bottom: 2px solid #1479C9;
 }
 
 .main-navbar a {
-  color: #c59e76; /* Beige */
+  color: #1479C9; /* Beige */
   margin: 0 10px;
-  font-size: 1.125rem;
+  font-size: 1.25rem; /* Slightly larger (was 1.125rem) */
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal; /* Remove bold */
   transition: color 0.3s ease;
 }
 
 .main-navbar a:hover {
-  color: #000; /* Change on hover to black for contrast */
+  color: #000; /* Hover to black */
 }
 
-    .floating-label {
-      position: relative;
-    }
-    .floating-label input,
-    .floating-label textarea {
-      border: 1px solid #d1d5db;
-      padding: 1.25rem 1rem 0.5rem;
-      width: 100%;
-      border-radius: 0.5rem;
-      outline: none;
-      font-size: 1rem;
-    }
-    .floating-label label {
-      position: absolute;
-      left: 1rem;
-      top: 0.75rem;
-      font-size: 0.875rem;
-      color: #6b7280;
-      pointer-events: none;
-      transition: all 0.2s ease-in-out;
-    }
-    .floating-label input:focus + label,
-    .floating-label textarea:focus + label,
-    .floating-label input:not(:placeholder-shown) + label,
-    .floating-label textarea:not(:placeholder-shown) + label {
-      top: 0.25rem;
-      left: 0.75rem;
-      font-size: 0.75rem;
-      color: #4f46e5;
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
     }
 
-    @media (max-width: 768px) {
-  #mobile-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    flex-direction: column;
-  }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-  #mobile-menu a {
-    padding: 0.75rem 0;
-    display: block;
-  }
-}
+    #toast {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #1479C9;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
 
-@media (max-width: 768px) {
-  .main-navbar {
-    padding: 20px 3%;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 16px;
+      border-radius: 50%;
+      font-size: 24px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: transform 0.2s ease;
+    }
 
-  .main-navbar img {
-    height: 40px;
-  }
-}
-
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-white text-gray-800">
-  <header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
-    <!-- Left Logo -->
-    <div class="flex items-center gap-3">
-      <img src="images/KingTechLogo no tag.png" alt="King Tech Logo" class="h-10 w-auto">
-    </div>
-  
-    <!-- Center Nav Links -->
-    <nav class="hidden md:flex gap-6 text-sm font-semibold text-[#c59e76] justify-center flex-grow text-center">
-      <a href="index.html" class="hover:text-black">Home</a>
-      <a href="about.html" class="hover:text-black">About</a>
-      <a href="index.html#services" class="hover:text-black">Services</a>
-      <a href="index.html#portfolio" class="hover:text-black">Portfolio</a>
-      <a href="index.html#faq" class="hover:text-black">FAQ</a>
-      <a href="contact.html" class="font-bold hover:text-black">Contact</a>
-    </nav>
-  
-    <!-- Right Anniversary Logo -->
-    <div class="flex items-center gap-3">
-      <img src="images/355 KT 2.png" alt="Anniversary Logo" class="h-20 w-auto max-h-20 scale-125">
-    </div>
-  
-    <!-- Mobile Hamburger Icon -->
-    <div class="md:hidden ml-auto block">
-      <button id="menu-toggle" class="text-2xl text-[#c59e76] focus:outline-none">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </header>
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const icon = menuToggle.querySelector('i');
-  
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-times');
+<body>
+ 
+<header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
+
+  <!-- Left Logo -->
+  <div class="flex items-center gap-3">
+    <img src="images/KingTechLogo no tag.png" alt="King Tech Logo" class="h-10 w-auto">
+  </div>
+
+  <!-- Mobile Hamburger Icon -->
+  <div class="md:hidden ml-auto block">
+    <button id="menu-toggle" class="text-3xl text-[#c59e76] focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Desktop Nav Links -->
+  <nav class="hidden md:flex md:gap-6 text-lg text-[#c59e76] justify-center flex-grow text-center">
+    <a href="index.html" class="hover:text-black">Home</a>
+    <a href="about.html" class="hover:text-black">About</a>
+    <a href="index.html#services" class="hover:text-black">Services</a>
+    <a href="index.html#portfolio" class="hover:text-black">Portfolio</a>
+    <a href="index.html#faq" class="hover:text-black">FAQ</a>
+    <a href="contact.html" class="hover:text-black">Contact</a>
+  </nav>
+
+  <!-- Right Anniversary Logo -->
+  <div class="hidden md:flex items-center gap-3">
+    <img src="images/355 KT 2.png" alt="Anniversary Logo" class="h-16 w-auto max-h-20 transform scale-125">
+  </div>
+
+
+ <!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden flex-col md:hidden bg-white w-full border-t border-[#c59e76] animate__animated animate__fadeInDown">
+  <a href="index.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Home</a>
+  <a href="about.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">About</a>
+  <a href="index.html#services" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Services</a>
+  <a href="index.html#portfolio" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Portfolio</a>
+  <a href="index.html#faq" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">FAQ</a>
+  <a href="contact.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Contact</a>
+
+  <!-- Mobile Anniversary Logo -->
+  <div class="py-4 flex justify-center">
+    <img src="images/355 KT 2.png" alt="Anniversary Logo" class="h-16 w-auto max-h-20 scale-110 block md:hidden">
+  </div>
+</div>
+</header>
+   
+<!-- Scripts -->
+<!-- JavaScript to Toggle Menu -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const icon = toggleBtn.querySelector('i');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  });
+
+  // Optional: Auto close on click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      icon.classList.add('fa-bars');
+      icon.classList.remove('fa-times');
     });
-  
-    // Optional: Close menu on link click
-    const navLinks = mobileMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          mobileMenu.classList.add('hidden');
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-times');
-        }
-      });
-    });
-  </script>
-  
-<div class="h-20"></div>
-<section class="py-24 bg-gradient-to-tr from-indigo-50 via-white to-purple-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-extrabold text-gray-800 mb-4">📬 Get in Touch with KingTech</h2>
-        <p class="text-lg text-gray-500">We're here to help with your next big idea. Let's build something great together.</p>
+  });
+</script>
+
+ 
+
+  <!-- Toast -->
+  <div id="toast">✅ Message sent successfully!</div>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/12175226700" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+<br> <br> <br> <br>  <br>  
+  <!-- Hero Section -->
+<section class="text-center py-20 bg-cover bg-center bg-no-repeat relative" style="background-image: url('https://www.marriott.com/content/dam/marriott-digital/destinations/destinationheroimages/en_us/photo/assets/pdt-usa-il-springfield-597991544235409.jpg');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/70 to-blue-600/70 backdrop-blur-sm"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 px-6">
+    <h1 class="text-5xl font-extrabold text-white mb-4" style="color: whitesmoke;">Contact King Tech Inc</h1>
+    <p class="text-white text-lg max-w-2xl mx-auto">Need support, service, or partnership info? We're just a message away.</p>
+  </div>
+</section>
+   <!-- Main Section -->
+  <section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
+    
+    <!-- Contact Info -->
+    <div class="card p-8 space-y-6">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4" style="color: #1479C9;"><i class="fas fa-building text-blue-500 mr-2" style="color: #1479C9;" ></i>Office Info</h2>
+      <div class="space-y-3 text-gray-700">
+        <p><i class="fas fa-map-marker-alt text-blue-500 mr-2" style="color: #1479C9;"></i>1025 Marco Ln, Springfield, IL 62712</p>
+        <p><i class="fas fa-phone-alt text-blue-500 mr-2" style="color: #1479C9;"></i>(217) 522-6700</p>
+        <p><i class="fas fa-envelope text-blue-500 mr-2" style="color: #1479C9;"></i>info@kingtech.net</p>
+        <p><i class="fas fa-globe text-blue-500 mr-2"style="color: #1479C9;"></i><a href="https://kingtech.net" class="text-blue-700 underline">www.kingtech.net</a></p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <form class="bg-white shadow-2xl rounded-3xl p-10 space-y-8 border border-gray-100 hover:shadow-indigo-100 transition">
-          <div class="floating-label">
-            <input type="text" placeholder=" " id="name" class="focus:ring-2 focus:ring-indigo-400" required>
-            <label for="name">Full Name</label>
-          </div>
-          <div class="floating-label">
-            <input type="email" placeholder=" " id="email" class="focus:ring-2 focus:ring-indigo-400" required>
-            <label for="email">Email Address</label>
-          </div>
-          <div class="floating-label">
-            <textarea rows="5" placeholder=" " id="message" class="focus:ring-2 focus:ring-indigo-400" required></textarea>
-            <label for="message">Your Message</label>
-          </div>
-          <button type="submit" class="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg transition-transform transform hover:scale-105">Send Message</button>
-        </form>
-        <div class="space-y-10 text-gray-700">
-          <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-            <h4 class="text-xl font-bold text-indigo-600 mb-2">📍 Office Address</h4>
-            <p>3 N Old State Capitol Plaza<br>Springfield, IL 62701</p>
-          </div>
-          <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-            <h4 class="text-xl font-bold text-indigo-600 mb-2">📞 Phone</h4>
-            <p>+1 217-522-6700</p>
-          </div>
-          <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-            <h4 class="text-xl font-bold text-indigo-600 mb-2">📧 Email</h4>
-            <p><a href="mailto:info@kingtech.net" class="text-indigo-500 hover:underline">info@kingtech.net</a></p>
-          </div>
-        </div>
+      <div class="flex gap-4 pt-4 text-xl text-blue-500">
+        <a href="#"><i class="fab fa-facebook hover:text-blue-700" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-instagram hover:text-blue-700" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-linkedin hover:text-blue-700"style="color: #1479C9;"></i></a>
       </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="card p-8">
+      <h2 class="text-2xl font-bold text-blue-700 mb-6" style="color: #1479C9;"><i class="fas fa-envelope-open-text mr-2"></i>Get in Touch</h2>
+      <form id="contactForm" class="space-y-4">
+        <input type="text" placeholder="Your Name" required class="w-full px-4 py-3 rounded-md border border-gray-300" />
+        <input type="email" placeholder="Your Email" required class="w-full px-4 py-3 rounded-md border border-gray-300" />
+        <input type="text" placeholder="Subject" class="w-full px-4 py-3 rounded-md border border-gray-300" />
+        <textarea rows="5" placeholder="Your Message" required class="w-full px-4 py-3 rounded-md border border-gray-300"></textarea>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full transition">
+          Send Message
+        </button>
+      </form>
     </div>
   </section>
 
-<footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-black py-16">
+  <!-- Google Map -->
+  <section class="w-full h-96 px-6 pb-20">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.0014663752455!2d-89.648255!3d39.781721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88752849c8b66cf5%3A0x1a1f602aa8b13f5d!2sSpringfield%2C%20IL!5e0!3m2!1sen!2sus!4v1615472673841!5m2!1sen!2sus"
+      width="100%"
+      height="100%"
+      style="border:0; border-radius: 1rem;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
+
+  <!-- Footer -->
+ <footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-gray-700 py-16">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- About -->
     <div>
-      <a href="index.html" class="inline-block bg-white p-2 rounded-lg shadow">
+      <a href="index.html" class="inline-block bg-white p-2 rounded shadow">
         <img src="images/kingtech.png" alt="King Tech Inc Logo" class="h-12 object-contain">
       </a>
-      <h5 class="mt-6 text-lg font-bold">About King Tech Inc</h5>
-      <p class="text-sm mt-2">King Technology Inc. provides comprehensive IT consulting services to public and private sector clients. Locally owned and operated, proudly serving Central Illinois’ technology needs for over 30 years.</p>
-      <div class="flex space-x-4 mt-4">
-        <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-instagram"></i></a>
+      <h5 class="mt-6 text-lg font-bold" style="color: #1479C9;">About King Tech Inc</h5>
+      <p class="text-sm mt-2">Locally owned and operated, proudly serving Central Illinois' technology needs for over 30 years.</p>
+      <div class="flex space-x-4 mt-4 text-xl text-blue-500">
+        <a href="#"><i class="fab fa-facebook-f hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-x-twitter hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-instagram hover:text-blue-500" style="color: #1479C9;"></i></a>
       </div>
     </div>
+
+    <!-- Quick Links -->
     <div>
-      <h5 class="text-lg font-bold mb-4">Quick Links</h5>
+      <h5 class="text-lg font-bold mb-4" style="color: #1479C9;">Quick Links</h5>
       <ul class="space-y-2 text-sm">
-        <li><a href="index.html" class="hover:underline">Home</a></li>
-        <li><a href="index.html#it-values" class="hover:underline">About Us</a></li>
-        <li><a href="index.html#services" class="hover:underline">Services</a></li>
-        <li><a href="index.html#portfolio" class="hover:underline">Portfolio</a></li>
-        <li><a href="#" class="hover:underline">Contact Us</a></li>
+        <li><a href="index.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-home text-blue-500" style="color: #1479C9;"></i> Home</a></li>
+        <li><a href="about.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-users text-blue-500" style="color: #1479C9;"></i> About Us</a></li>
+        <li><a href="index.html#services" class="flex items-center gap-2 hover:underline"><i class="fas fa-briefcase text-blue-500" style="color: #1479C9;"></i> Services</a></li>
+        <li><a href="index.html#portfolio" class="flex items-center gap-2 hover:underline"><i class="fas fa-layer-group text-blue-500" style="color: #1479C9;"></i> Portfolio</a></li>
+        <li><a href="contact.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-headset text-blue-500" style="color: #1479C9;"></i> Contact Us</a></li>
       </ul>
     </div>
+
+    <!-- Contact -->
     <div>
-      <h5 class="text-lg font-bold mb-4">Contact Us</h5>
+      <h5 class="text-lg font-bold mb-4"style="color: #1479C9;">Contact Us</h5>
       <ul class="space-y-3 text-sm">
-        <li><i class="fas fa-map-marker-alt mr-2"></i> 3 N Old State Capitol Plaza, Springfield, IL 62701</li>
-        <li><i class="fas fa-phone mr-2"></i> +1 217-522-6700</li>
-        <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@kingtech.net" class="hover:underline">info@kingtech.net</a></li>
+        <li><i class="fas fa-map-marker-alt mr-2 text-blue-500" style="color: #1479C9;"></i> 3 N Old State Capitol Plaza, Springfield, IL 62701</li>
+        <li><i class="fas fa-phone mr-2 text-blue-500" style="color: #1479C9;"></i> +1 217-522-6700</li>
+        <li>
+          <i class="fas fa-envelope mr-2 text-blue-500"></i>
+          <a href="mailto:info@kingtech.net" class="hover:underline">info@kingtech.net</a>
+        </li>
       </ul>
     </div>
   </div>
-  <div class="mt-10 text-center text-sm text-black border-t border-black/10 pt-6">
+
+  <div class="mt-10 text-center text-sm text-gray-600 border-t border-gray-300 pt-6">
     &copy; 2025 King Technology Inc. All rights reserved.
   </div>
 </footer>
+
+  <!-- Script for Toast -->
+  <script>
+    const form = document.getElementById("contactForm");
+    const toast = document.getElementById("toast");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      toast.style.display = "block";
+      setTimeout(() => {
+        toast.style.display = "none";
+        form.reset();
+      }, 3000);
+    });
+  </script>
 
 </body>
 </html>

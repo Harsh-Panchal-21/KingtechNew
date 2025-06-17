@@ -19,27 +19,29 @@
     }
       /* Menu */
   
-  .main-navbar {
-  background-color: white !important; /* Based on uploaded image */
+
+      .main-navbar {
+  background-color: white !important;
   padding: 30px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
   z-index: 999;
+  border-bottom: 2px solid #1479C9;
 }
 
 .main-navbar a {
-  color: #c59e76; /* Beige */
+  color: #1479C9; /* Beige */
   margin: 0 10px;
-  font-size: 1.125rem;
+  font-size: 1.25rem; /* Slightly larger (was 1.125rem) */
   text-decoration: none;
-  font-weight: bold;
+  font-weight: normal; /* Remove bold */
   transition: color 0.3s ease;
 }
 
 .main-navbar a:hover {
-  color: #000; /* Change on hover to black for contrast */
+  color: #000; /* Hover to black */
 }
     .service-detail {
       background: white;
@@ -142,10 +144,16 @@
   <!-- Service Section -->
   <div class="container">
     <section class="service-detail">
-      <div class="text-center mb-5">
-        <h2>Property Management Systems</h2>
-        <p class="lead">Efficient, intuitive, and fully integrated platforms to manage properties, tenants, leases, and more.</p>
-      </div>
+        <div class="text-center mb-5">
+<h2 style="font-size: 3.5rem; color: #1479C9;">
+  <i class="fas fa-building me-2" style="color: #1479C9;"></i>
+  Property Management Systems
+</h2>
+            <p style="font-size: 0.9rem; color: #555;">
+              Efficient, intuitive, and fully integrated platforms to manage properties, tenants, leases, and more.
+            </p>
+          </div>
+          
 
       <div class="row align-items-center">
         <div class="col-md-6 mb-4">
@@ -167,56 +175,66 @@
         </div>
       </div>
 
-      <div class="highlight-box mt-5">
-        <h5>Why Choose KingTech for PMS?</h5>
-        <ul>
-          <li><strong>Industry Experience:</strong> Tailored modules for various property types.</li>
-          <li><strong>Cloud-Ready:</strong> Access from anywhere, anytime.</li>
-          <li><strong>Secure and Scalable:</strong> Built with performance and protection in mind.</li>
-          <li><strong>User-Friendly UI:</strong> Clean, simple, and intuitive interfaces.</li>
-        </ul>
-      </div>
+<div class="highlight-box mt-5 p-4 rounded-lg shadow-sm" style="background-color: #F0F8FF;">
+  <h5 style="color: #1479C9;" class="font-bold text-lg mb-3">Why Choose KingTech for PMS?</h5>
+  <ul class="text-sm text-gray-600 space-y-2">
+    <li><strong class="text-gray-700">Industry Experience:</strong> Tailored modules for various property types.</li>
+    <li><strong class="text-gray-700">Cloud-Ready:</strong> Access from anywhere, anytime.</li>
+    <li><strong class="text-gray-700">Secure and Scalable:</strong> Built with performance and protection in mind.</li>
+    <li><strong class="text-gray-700">User-Friendly UI:</strong> Clean, simple, and intuitive interfaces.</li>
+  </ul>
+</div>
+
     </section>
   </div>
+<footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-gray-700 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
-  <footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-black py-16">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-      <div>
-        <a href="index.html" class="inline-block bg-white p-2 rounded-lg shadow">
-          <img src="images/kingtech.png" alt="King Tech Inc Logo" class="h-12 object-contain">
-        </a>
-        <h5 class="mt-6 text-lg font-bold">About King Tech Inc</h5>
-        <p class="text-sm mt-2">King Technology Inc. provides comprehensive IT consulting services to public and private sector clients. Locally owned and operated, proudly serving Central Illinois’ technology needs for over 30 years.</p>
-        <div class="flex space-x-4 mt-4">
-          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="text-black hover:text-gray-700"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div>
-        <h5 class="text-lg font-bold mb-4">Quick Links</h5>
-        <ul class="space-y-2 text-sm">
-          <li><a href="index.html" class="hover:underline">Home</a></li>
-          <li><a href="index.html#it-values" class="hover:underline">About Us</a></li>
-          <li><a href="index.html#services" class="hover:underline">Services</a></li>
-          <li><a href="index.html#portfolio" class="hover:underline">Portfolio</a></li>
-          <li><a href="#" class="hover:underline">Contact Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-lg font-bold mb-4">Contact Us</h5>
-        <ul class="space-y-3 text-sm">
-          <li><i class="fas fa-map-marker-alt mr-2"></i> 3 N Old State Capitol Plaza, Springfield, IL 62701</li>
-          <li><i class="fas fa-phone mr-2"></i> +1 217-522-6700</li>
-          <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@kingtech.net" class="hover:underline">info@kingtech.net</a></li>
-        </ul>
+    <!-- About -->
+    <div>
+      <a href="index.html" class="inline-block bg-white p-2 rounded shadow">
+        <img src="images/kingtech.png" alt="King Tech Inc Logo" class="h-12 object-contain">
+      </a>
+      <h5 class="mt-6 text-lg font-bold" style="color: #1479C9;">About King Tech Inc</h5>
+      <p class="text-sm mt-2">Locally owned and operated, proudly serving Central Illinois' technology needs for over 30 years.</p>
+      <div class="flex space-x-4 mt-4 text-xl text-blue-500">
+        <a href="#"><i class="fab fa-facebook-f hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-x-twitter hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in hover:text-blue-500" style="color: #1479C9;"></i></a>
+        <a href="#"><i class="fab fa-instagram hover:text-blue-500" style="color: #1479C9;"></i></a>
       </div>
     </div>
-    <div class="mt-10 text-center text-sm text-black border-t border-black/10 pt-6">
-      &copy; 2025 King Technology Inc. All rights reserved.
+
+    <!-- Quick Links -->
+    <div>
+      <h5 class="text-lg font-bold mb-4" style="color: #1479C9;">Quick Links</h5>
+      <ul class="space-y-2 text-sm">
+        <li><a href="index.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-home text-blue-500" style="color: #1479C9;"></i> Home</a></li>
+        <li><a href="about.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-users text-blue-500" style="color: #1479C9;"></i> About Us</a></li>
+        <li><a href="index.html#services" class="flex items-center gap-2 hover:underline"><i class="fas fa-briefcase text-blue-500" style="color: #1479C9;"></i> Services</a></li>
+        <li><a href="index.html#portfolio" class="flex items-center gap-2 hover:underline"><i class="fas fa-layer-group text-blue-500" style="color: #1479C9;"></i> Portfolio</a></li>
+        <li><a href="contact.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-headset text-blue-500" style="color: #1479C9;"></i> Contact Us</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <!-- Contact -->
+    <div>
+      <h5 class="text-lg font-bold mb-4"style="color: #1479C9;">Contact Us</h5>
+      <ul class="space-y-3 text-sm">
+        <li><i class="fas fa-map-marker-alt mr-2 text-blue-500" style="color: #1479C9;"></i> 3 N Old State Capitol Plaza, Springfield, IL 62701</li>
+        <li><i class="fas fa-phone mr-2 text-blue-500" style="color: #1479C9;"></i> +1 217-522-6700</li>
+        <li>
+          <i class="fas fa-envelope mr-2 text-blue-500"></i>
+          <a href="mailto:info@kingtech.net" class="hover:underline">info@kingtech.net</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10 text-center text-sm text-gray-600 border-t border-gray-300 pt-6">
+    &copy; 2025 King Technology Inc. All rights reserved.
+  </div>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
