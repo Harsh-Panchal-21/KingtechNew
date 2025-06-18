@@ -151,11 +151,16 @@
 }
 
 </style> 
+ 
 <header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
   <!-- Left Logo -->
-  <div class="flex items-center gap-3">
+  <div class="w-48 flex flex-col items-start justify-center">
     <img src="images/KingTechLogo no tag.png" alt="King Tech Logo" class="h-10 w-auto">
+        <span class="text-xs text-[#1479C9] font-medium leading-tight mt-1">
+We Manage IT So You Can Manage Your Business</span>
   </div>
+
+
 
   <!-- Mobile Hamburger Icon -->
   <div class="md:hidden ml-auto block">
@@ -164,14 +169,15 @@
     </button>
   </div>
 
-  <!-- Desktop Nav Links -->
-  <nav class="hidden md:flex md:gap-6 text-lg text-[#c59e76] justify-center flex-grow text-center">
-    <a href="index.html" class="hover:text-black " style="color: #1479C9;">Home</a>
-    <a href="about.html" class="hover:text-black" style="color: #1479C9;">About</a>
-    <a href="index.html#services" class="hover:text-black" style="color: #1479C9;">Services</a>
-     <a href="index.html#faq" class="hover:text-black" style="color: #1479C9;">FAQ</a>
-    <a href="contact.html" class="hover:text-black" style="color: #1479C9;">Contact</a>
-  </nav>
+  <div class="hidden md:flex flex-1 justify-center">
+    <nav class="flex gap-6 text-lg text-[#1479C9] items-center">
+      <a href="index.html" class="hover:text-black">Home</a>
+      <a href="about.html" class="hover:text-black">About</a>
+      <a href="index.html#services" class="hover:text-black">Services</a>
+      <a href="index.html#faq" class="hover:text-black">FAQ</a>
+      <a href="contact.html" class="hover:text-black">Contact</a>
+    </nav>
+  </div>
 
   <!-- Right Anniversary Logo -->
   <div class="hidden md:flex items-center gap-3">
@@ -181,6 +187,7 @@
 
  <!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden flex-col md:hidden bg-white w-full border-t border-[#c59e76] animate__animated animate__fadeInDown">
+ 
   <a href="index.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Home</a>
   <a href="about.html" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">About</a>
   <a href="index.html#services" class="block text-center py-4 text-[#c59e76] hover:bg-gray-50">Services</a>
@@ -216,6 +223,7 @@
     });
   });
 </script>
+ 
       <br> <br>        <br> <br> 
 
   <!-- Cybersecurity Content -->
