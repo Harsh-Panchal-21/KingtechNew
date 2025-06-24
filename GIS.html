@@ -2,22 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>E-Commerce Solutions | KingTech Inc</title>
+  <title>      Geographic Information Systems (GIS) | KingTech Inc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
   <style>
     body {
       font-family: 'Rubik', sans-serif;
-      background: linear-gradient(to right, #f3f4f6, #ffffff);
-      color: #1f2937;
+      background: linear-gradient(to right, #f1f5f9, #ffffff);
     }
-
       /* Menu */
   
 
@@ -45,28 +40,12 @@
   color: #000; /* Hover to black */
 }
     .service-detail {
+      margin-top: 120px;
       background: white;
-      border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
       padding: 60px 40px;
-      margin-top: 60px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
     }
-
-    .service-detail h2 {
-      font-weight: 700;
-      color: #1e3a8a;
-    }
-
-    .service-detail .lead {
-      font-size: 1.15rem;
-      color: #4b5563;
-    }
-
-    .service-detail ul li {
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
     .btn-primary {
       background: linear-gradient(to right, #1e3a8a, #3b82f6);
       border: none;
@@ -74,16 +53,18 @@
       padding: 10px 24px;
       border-radius: 8px;
     }
-
     .btn-primary:hover {
       background: linear-gradient(to right, #1e40af, #2563eb);
     }
-
-     
+ 
   </style>
+ 
+
 </head>
 <body>
-
+<!-- Responsive Header -->
+<!-- Navbar -->
+   <!-- Font Awesome -->
      <style>
   @media (max-width: 768px) {
     .service-detail {
@@ -153,14 +134,14 @@
  
 <header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
   <!-- Left Logo -->
-<div class="w-48 flex flex-col items-center justify-center text-center">
-  <img src="images/kingtech.png" alt="King Tech Logo" class="h-10 w-auto mb-1">
-<div class="text-[7px] text-gray-600 font-medium leading-tight whitespace-nowrap"  style="color: gray; font-size: 10px;">
-  We Manage IT,<br>So You Can Manage Your Business
-</div>
+  <div class="w-48 flex flex-col items-start justify-center">
+    <img src="images/KingTechLogo no tag.png" alt="King Tech Logo" class="h-10 w-auto">
+        <span class="text-xs text-[#1479C9] font-medium leading-tight mt-1">
+We Manage IT So You Can Manage Your Business</span>
+  </div>
 
-</div>
- 
+
+
   <!-- Mobile Hamburger Icon -->
   <div class="md:hidden ml-auto block">
     <button id="menu-toggle" class="text-3xl text-[#c59e76] focus:outline-none">
@@ -179,13 +160,11 @@
   </div>
 
   <!-- Right Anniversary Logo -->
-<div class="hidden md:flex flex-col items-center gap-2 text-center max-w-xs">
-  <img src="images/355 KT 2.png" alt="Anniversary Logo" class="h-12 w-auto mb-1">
-  <span class="text-[1.1rem] text-gray-600 leading-snug" style="font-size: 10px;">
-    Locally owned and operated,<br>proudly serving Central Illinois' technology needs for over 35 years.
-  </span>
-</div>
-  
+  <div class="hidden md:flex items-center gap-3">
+    <img src="images/355 KT 2.png" alt="Anniversary Logo" class="h-16 w-auto max-h-20 transform scale-125">
+  </div>
+
+
  <!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden flex-col md:hidden bg-white w-full border-t border-[#c59e76] animate__animated animate__fadeInDown">
  
@@ -224,52 +203,57 @@
     });
   });
 </script>
- 
+  
+
       <br> <br>        <br> <br> 
 
-  <div class="container">
-    <section class="service-detail">
-        <div class="text-center mb-5">
-<h2 style="font-size: 3.5rem; color: #1479C9;">
-  <i class="fas fa-shopping-cart me-2" style="color: #1479C9;"></i>
-  E-Commerce Solutions
-</h2>
-            <p style="font-size: 0.7rem; color: #555;">
-              Launch, manage, and scale your online store with powerful tools tailored for your business.
-            </p>
-          </div>
-          
-
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4">
-          <img src="images/ecommerce.png" alt="E-Commerce Solutions" class="img-fluid rounded shadow-sm" />
-        </div>
-        <div class="col-md-6">
-          <h4 class="mb-3 text-primary">What We Offer:</h4>
-          <ul>
-            <li>Custom storefronts (Shopify, WooCommerce, Magento)</li>
-            <li>Inventory and order management systems</li>
-            <li>Secure checkout & multiple payment gateways</li>
-            <li>Shipping integrations and tax automation</li>
-          </ul>
-          <p class="mt-3">
-            KingTech's e-commerce solutions are scalable, user-friendly, and conversion-focused. Whether you're starting from scratch or upgrading, we deliver sleek shopping experiences backed by robust backend systems.
-          </p>
-          <a href="index.html#contact" class="btn btn-primary mt-4">Book a Consultation</a>
-        </div>
-      </div>
-
-      <div class="mt-5 p-4 bg-light rounded shadow-sm">
-  <h5 style="color: #1479C9;" class="font-bold text-lg mb-3">Why Choose KingTech for PMS?</h5>
-        <ul>
-          <li><strong>Mobile-Optimized Stores:</strong> Seamless on all screen sizes.</li>
-          <li><strong>Marketing & SEO Tools:</strong> Built-in support for growth.</li>
-          <li><strong>Custom Features:</strong> Loyalty programs, subscriptions, reviews.</li>
-          <li><strong>Analytics Integration:</strong> Google Analytics, Facebook Pixel, and more.</li>
-        </ul>
-      </div>
-    </section>
+<div class="container">
+<section class="service-detail">
+  <div class="text-center mb-5">
+    <h2 style="font-size: 3.5rem; color: #1479C9;">
+      <i class="fas fa-map-marked-alt me-2" style="color: #1479C9;"></i>
+      Geographic Information Systems (GIS)
+    </h2>
+    <p style="font-size: 0.7rem; color: #555;">
+      Visualize, analyze, and interpret spatial data to solve real-world challenges.
+    </p>
   </div>
+
+  <div class="row align-items-center">
+    <div class="col-md-6 mb-4">
+      <img src="https://www.caliper.com/graphics/Maptitude_Mapping_Software_Screen.png" alt="Geographic Information Systems (GIS)" class="img-fluid rounded shadow-sm" />
+    </div>
+    <div class="col-md-6">
+      <h4 class="mb-3 text-primary">What We Offer:</h4>
+      <ul>
+        <li>Interactive mapping and location intelligence</li>
+        <li>Geospatial data visualization and dashboards</li>
+        <li>Custom GIS application development</li>
+        <li>Integration with ESRI, ArcGIS, and open-source platforms</li>
+      </ul>
+      <p class="mt-3">
+        Our GIS services empower your organization to harness the power of location data, improve decision-making, and uncover spatial patterns with precision.
+      </p>
+      <p>
+        Whether it’s asset management, urban planning, or real-time tracking — we build scalable, integrated solutions tailored to your needs.
+      </p>
+      <a href="index.html#contact" class="btn btn-primary mt-4">Get a Quote</a>
+    </div>
+  </div>
+
+  <div class="mt-5 p-4 bg-light rounded shadow-sm">
+    <h5 style="color: #1479C9;" class="font-bold text-lg mb-3">Why Choose KingTech for GIS?</h5>
+    <ul>
+      <li><strong>Industry Tools:</strong> Expertise with ArcGIS, QGIS, and Mapbox</li>
+      <li><strong>Custom Layers:</strong> Tailored maps and data overlays</li>
+      <li><strong>Real-Time Data:</strong> Live spatial tracking and analysis</li>
+      <li><strong>Cross-Sector Experience:</strong> Solutions for government, utilities, logistics, and more</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
 <footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-gray-700 py-16">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
 
@@ -278,7 +262,7 @@
       <a href="index.html" class="inline-block bg-white p-2 rounded shadow">
         <img src="images/kingtech.png" alt="King Tech Inc Logo" class="h-12 object-contain">
       </a>
-      <h5 class="mt-6 text-lg font-bold" style="color: #1479C9;">About KingTech Inc</h5>
+      <h5 class="mt-6 text-lg font-bold" style="color: #1479C9;">About King Tech Inc</h5>
       <p class="text-sm mt-2">Locally owned and operated, proudly serving Central Illinois' technology needs for over 30 years.</p>
       <div class="flex space-x-4 mt-4 text-xl text-blue-500">
         <a href="#"><i class="fab fa-facebook-f hover:text-blue-500" style="color: #1479C9;"></i></a>
@@ -317,6 +301,5 @@
     &copy; 2025 King Technology Inc. All rights reserved.
   </div>
 </footer>
-
 </body>
 </html>

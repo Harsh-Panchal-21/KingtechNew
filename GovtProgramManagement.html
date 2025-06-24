@@ -2,38 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Cabling Installation | KingTech Inc</title>
+  <title>Gov't Program Management | KingTech Inc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     body {
       font-family: 'Rubik', sans-serif;
       background: linear-gradient(to right, #f1f5f9, #ffffff);
     }
-  .main-navbar {
-  background-color: white !important;
-  padding: 30px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
-  z-index: 999;
-  border-bottom: 2px solid #1479C9;
-}
-
-.main-navbar a {
-   color: #1479C9; /* Beige */
-  margin: 0 10px;
-  font-size: 1.25rem; /* Slightly larger (was 1.125rem) */
-  text-decoration: none;
-  font-weight: normal; /* Remove bold */
-  transition: color 0.3s ease;
-}
-
- 
+    .main-navbar {
+      background-color: white !important;
+      padding: 30px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      z-index: 999;
+      border-bottom: 2px solid #1479C9;
+    }
+    .main-navbar a {
+      color: #1479C9;
+      margin: 0 10px;
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .main-navbar a:hover {
+      color: #000;
+    }
     .service-detail {
       margin-top: 120px;
       background: white;
@@ -51,76 +50,25 @@
     .btn-primary:hover {
       background: linear-gradient(to right, #1e40af, #2563eb);
     }
+    @media (max-width: 768px) {
+      .service-detail {
+        padding: 30px 20px;
+        margin-top: 100px;
+      }
+      h2 {
+        font-size: 2rem !important;
+      }
+      .main-navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 5%;
+      }
+    }
   </style>
 </head>
-<body> 
-  <style>
-  @media (max-width: 768px) {
-    .service-detail {
-      padding: 30px 20px;
-      margin-top: 100px;
-    }
+<body>
 
-    h2 {
-      font-size: 2rem !important;
-    }
-
-    .main-navbar {
-      flex-wrap: wrap;
-      padding: 15px 5%;
-    }
-
-    .main-navbar img {
-      height: 2.5rem;
-    }
-
-    .col-md-6 {
-      flex: 100%;
-      max-width: 100%;
-    }
-
-    .service-detail img {
-      width: 100%;
-      height: auto;
-      border-radius: 1rem;
-    }
-
-    footer {
-      padding: 40px 20px;
-    }
-
-    footer .grid {
-      display: block;
-    }
-
-    footer .grid > div {
-      margin-bottom: 2rem;
-    }
-
-    #mobile-menu {
-      background: white;
-      padding-bottom: 2rem;
-     }
-
-    #mobile-menu a {
-      font-size: 1.1rem;
-    }
-  }
-  @media (max-width: 768px) {
-  .main-navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .main-navbar .md\\:hidden.ml-auto {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-  }
-}
-
-</style> 
- 
+<!-- Header -->
 <header class="main-navbar fixed top-0 left-0 w-full z-50 py-4 px-6 flex items-center justify-between bg-white border-b-2 border-[#c59e76] shadow-md">
   <!-- Left Logo -->
 <div class="w-48 flex flex-col items-center justify-center text-center">
@@ -130,10 +78,7 @@
 </div>
 
 </div>
-
-
-
-
+ 
   <!-- Mobile Hamburger Icon -->
   <div class="md:hidden ml-auto block">
     <button id="menu-toggle" class="text-3xl text-[#c59e76] focus:outline-none">
@@ -158,14 +103,7 @@
     Locally owned and operated,<br>proudly serving Central Illinois' technology needs for over 35 years.
   </span>
 </div>
-
-
-
-
-
-
-
-
+  
  <!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden flex-col md:hidden bg-white w-full border-t border-[#c59e76] animate__animated animate__fadeInDown">
  
@@ -182,79 +120,56 @@
 </div>
 </header>
    
-<!-- Scripts -->
-<!-- JavaScript to Toggle Menu -->
-<script>
-  const toggleBtn = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const icon = toggleBtn.querySelector('i');
 
-  toggleBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-  });
-
-  // Optional: Auto close on click
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      icon.classList.add('fa-bars');
-      icon.classList.remove('fa-times');
-    });
-  });
-</script>
- 
- 
-
+<!-- Page Content -->
 <br><br><br><br>
-
 <div class="container">
   <section class="service-detail">
     <div class="text-center mb-5">
       <h2 style="font-size: 3.5rem; color: #1479C9;">
-        <i class="fas fa-network-wired me-2" style="color: #1479C9;"></i>
-        Cabling & Network Installation
+        <i class="fas fa-university me-2" style="color: #1479C9;"></i>
+        Gov't Program Management
       </h2>
       <p style="font-size: 0.7rem; color: #555;">
-        Professional network wiring for homes, offices, and enterprises — designed for performance and reliability.
+        Helping government agencies modernize and streamline operations with tailored technology solutions.
       </p>
     </div>
 
     <div class="row align-items-center">
       <div class="col-md-6 mb-4">
-        <img src="https://www.bcsconsultants.com/wp-content/uploads/2024/06/BCS-2024-05-Content-2-2-1-scaled.jpeg" alt="Cabling Installation" class="img-fluid rounded shadow-sm" />
+        <img src="https://cdn.prod.website-files.com/62d539593504f1e73d2c19b6/62f35bdab9b831154b253911_62f0c2fd7cc1117635cd23f7_628dd1dae9b2e74e8bbadcd8_Best%252520Project%252520Management%252520Software%252520for%252520agencies.png" alt="Gov't Program Management" class="img-fluid rounded shadow-sm" />
       </div>
       <div class="col-md-6">
-        <h4 class="mb-3 text-primary">Our Structured Cabling Services:</h4>
+        <h4 class="mb-3 text-primary">What We Offer:</h4>
         <ul>
-          <li>Cat5e, Cat6, Cat6A, and Fiber Optic installation</li>
-          <li>Patch panel setup & rack mounting</li>
-          <li>Wireless access point integration</li>
-          <li>Office/retail/warehouse full-network wiring</li>
+          <li>Case management platforms for government programs</li>
+          <li>Grant tracking, reporting, and auditing solutions</li>
+          <li>Custom dashboards and document management tools</li>
+          <li>Digital transformation consulting and IT compliance</li>
         </ul>
         <p class="mt-3">
-          KingTech’s certified installers ensure minimal disruption and optimal performance. Whether you’re relocating, expanding, or starting fresh — we handle it all.
+          Our systems are designed to increase transparency, ensure compliance, and streamline workflows across departments.
         </p>
         <p>
-          Our installations are tested, labeled, and documented for long-term support. All jobs include consultation, layout planning, and compliance.
+          We specialize in helping agencies modernize legacy software, comply with state/federal mandates, and improve constituent services.
         </p>
-        <a href="contact.html" class="btn btn-primary mt-4">Schedule a Site Visit</a>
+        <a href="index.html#contact" class="btn btn-primary mt-4">Get a Quote</a>
       </div>
     </div>
 
     <div class="mt-5 p-4 bg-light rounded shadow-sm">
-      <h5 style="color: #1479C9;" class="font-bold text-lg mb-3">Why Choose KingTech?</h5>
+      <h5 style="color: #1479C9;" class="font-bold text-lg mb-3">Why Choose KingTech for Government Projects?</h5>
       <ul>
-        <li><strong>Experienced Techs:</strong> Certified, licensed & insured professionals</li>
-        <li><strong>Scalable Designs:</strong> Built for today’s needs and tomorrow’s growth</li>
-        <li><strong>Speed & Reliability:</strong> Fast installs with zero compromise on quality</li>
-        <li><strong>Turnkey Service:</strong> Design, cabling, testing, and documentation included</li>
+        <li><strong>Experienced Team:</strong> Deep knowledge of public sector tech environments</li>
+        <li><strong>Security First:</strong> Solutions built for privacy, encryption, and compliance</li>
+        <li><strong>Grant & Fund Management:</strong> Track budgets and outcomes seamlessly</li>
+        <li><strong>Proven Results:</strong> Trusted by agencies across Illinois and beyond</li>
       </ul>
     </div>
   </section>
 </div>
 
+<!-- Footer -->
 <footer class="bg-gradient-to-r from-[#f9f9f9] to-[#e8e8e8] text-gray-700 py-16">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
     <div>
@@ -277,7 +192,6 @@
         <li><a href="index.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-home" style="color: #1479C9;"></i> Home</a></li>
         <li><a href="about.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-users" style="color: #1479C9;"></i> About Us</a></li>
         <li><a href="index.html#services" class="flex items-center gap-2 hover:underline"><i class="fas fa-briefcase" style="color: #1479C9;"></i> Services</a></li>
-        <li><a href="index.html#portfolio" class="flex items-center gap-2 hover:underline"><i class="fas fa-layer-group" style="color: #1479C9;"></i> Portfolio</a></li>
         <li><a href="contact.html" class="flex items-center gap-2 hover:underline"><i class="fas fa-headset" style="color: #1479C9;"></i> Contact Us</a></li>
       </ul>
     </div>
@@ -287,7 +201,9 @@
       <ul class="space-y-3 text-sm">
         <li><i class="fas fa-map-marker-alt mr-2" style="color: #1479C9;"></i> 3 N Old State Capitol Plaza, Springfield, IL 62701</li>
         <li><i class="fas fa-phone mr-2" style="color: #1479C9;"></i> +1 217-522-6700</li>
-        <li><i class="fas fa-envelope mr-2"></i> <a href="mailto:info@kingtech.net" class="hover:underline">info@kingtech.net</a></li>
+        <li><i class="fas fa-envelope mr-2" style="color: #1479C9;"></i>
+          <a href="mailto:info@kingtech.net" class="hover:underline">info@kingtech.net</a>
+        </li>
       </ul>
     </div>
   </div>
